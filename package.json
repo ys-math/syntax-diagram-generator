@@ -1,0 +1,19 @@
+{
+  "name": "syntax-diagram-generator",
+  "version": "0.1.0",
+  "description": "Generate railroad syntax diagrams from EBNF (ISO/IEC 14977). SVG and TikZ output, runs entirely in the browser.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  }
+}
