@@ -20,6 +20,7 @@ let lastGood: RuleDiagram[] = [];
 export function initApp(): void {
   const dialectSel = $<HTMLSelectElement>("dialect");
   const grammarEl = $<HTMLTextAreaElement>("grammar");
+  const gutterEl = $<HTMLDivElement>("gutter");
   const diagramsEl = $<HTMLDivElement>("diagrams");
   const banner = $<HTMLDivElement>("error-banner");
   const errorText = $<HTMLSpanElement>("error-text");
@@ -39,6 +40,22 @@ export function initApp(): void {
   $("theme-toggle").addEventListener("click", toggleTheme);
 
   grammarEl.value = localStorage.getItem(STORAGE_KEY) ?? SAMPLE_GRAMMAR;
+
+  // VSCode-style line-number gutter, kept in sync with the textarea's content and scroll.
+  let lineCount = 0;
+  const updateGutter = () => {
+    const n = grammarEl.value.split("\n").length;
+    if (n === lineCount) return;
+    lineCount = n;
+    let s = "";
+    for (let i = 1; i <= n; i++) s += `${i}\n`;
+    gutterEl.textContent = s;
+  };
+  grammarEl.addEventListener("input", updateGutter);
+  grammarEl.addEventListener("scroll", () => {
+    gutterEl.scrollTop = grammarEl.scrollTop;
+  });
+  updateGutter();
 
   // Restore persisted fit settings; the cm field only matters (and only shows) in wrap mode.
   modeSel.value = localStorage.getItem(MODE_KEY) ?? DEFAULT_OPTIONS.mode;
@@ -87,6 +104,7 @@ export function initApp(): void {
   $("error-dismiss").addEventListener("click", () => hideError(banner));
   $("sample-btn").addEventListener("click", () => {
     grammarEl.value = SAMPLE_GRAMMAR;
+    updateGutter();
     run();
   });
 

@@ -165,18 +165,48 @@ button {
   gap: 8px;
 }
 
+/* Shared editor metrics so the gutter and textarea line up exactly. */
+.editor {
+  --editor-font: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+  --editor-size: 13.5px;
+  --editor-line: 1.55;
+  --editor-pad-y: 14px;
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.gutter {
+  flex: 0 0 auto;
+  overflow: hidden;
+  padding: var(--editor-pad-y) 8px var(--editor-pad-y) 14px;
+  font-family: var(--editor-font);
+  font-size: var(--editor-size);
+  line-height: var(--editor-line);
+  white-space: pre;
+  text-align: right;
+  color: var(--muted);
+  background: var(--panel-2);
+  border-right: 1px solid var(--border);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 textarea {
   flex: 1;
   border: 0;
   resize: none;
-  padding: 14px;
-  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
-  font-size: 13.5px;
-  line-height: 1.55;
+  padding: var(--editor-pad-y) 14px;
+  font-family: var(--editor-font);
+  font-size: var(--editor-size);
+  line-height: var(--editor-line);
   background: transparent;
   color: var(--text);
   outline: none;
   tab-size: 2;
+  white-space: pre;
+  overflow: auto;
 }
 
 .error-banner {
