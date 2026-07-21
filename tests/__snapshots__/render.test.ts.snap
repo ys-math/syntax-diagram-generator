@@ -2,7 +2,7 @@
 
 exports[`renderers — golden snapshots > matches the SVG golden snapshot 1`] = `
 "expression
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276.6 114" width="276.6" height="114" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.4 118" width="149.4" height="118" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -10,10 +10,10 @@ exports[`renderers — golden snapshots > matches the SVG golden snapshot 1`] = 
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 33 L 8 47"/><path class="rail" d="M 8 40 L 20 40"/><rect class="nonterminal" x="20" y="28" width="51.6" height="24" rx="3"/><text class="lbl" x="45.8" y="40">term</text><path class="rail" d="M 71.6 40 L 83.6 40"/><path class="rail" d="M 83.6 40 L 103.6 40"/><path class="rail" d="M 103.6 40 L 113.6 40"/><path class="rail" d="M 113.6 40 L 123.6 40"/><rect class="terminal" x="123.6" y="28" width="29.4" height="24" rx="12"/><text class="lbl" x="138.3" y="40">+</text><path class="rail" d="M 153 40 L 173 40"/><path class="rail" d="M 113.6 40 L 113.6 69 Q 113.6 74 118.6 74 L 123.6 74"/><rect class="terminal" x="123.6" y="62" width="29.4" height="24" rx="12"/><text class="lbl" x="138.3" y="74">-</text><path class="rail" d="M 153 74 L 158 74 Q 163 74 163 69 L 163 45 Q 163 40 168 40 L 173 40"/><path class="rail" d="M 173 40 L 185 40"/><rect class="nonterminal" x="185" y="28" width="51.6" height="24" rx="3"/><text class="lbl" x="210.8" y="40">term</text><path class="rail" d="M 236.6 40 L 256.6 40"/><path class="rail" d="M 246.6 40 L 246.6 86 Q 246.6 96 236.6 96 L 103.6 96 Q 93.6 96 93.6 86 L 93.6 40"/><polygon class="arrow" points="174.1,92 166.1,96 174.1,100"/><path class="rail" d="M 93.6 40 L 93.6 28 Q 93.6 18 103.6 18 L 236.6 18 Q 246.6 18 246.6 28 L 246.6 40"/><path class="rail" d="M 256.6 40 L 268.6 40"/><path class="rail" d="M 268.6 33 L 268.6 47"/></svg>
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 48.9 20"/><rect class="nonterminal" x="48.9" y="8" width="51.6" height="24" rx="3"/><text class="lbl" x="74.7" y="20">term</text><path class="rail" d="M 100.5 20 L 129.4 20"/><path class="rail" d="M 109.4 20 L 119.4 20 Q 129.4 20 129.4 30 L 129.4 49 Q 129.4 59 119.4 59 L 30 59 Q 20 59 20 49 L 20 30 Q 20 20 30 20 L 40 20"/><path class="rail" d="M 40 59 L 60 59"/><rect class="terminal" x="60" y="47" width="29.4" height="24" rx="12"/><text class="lbl" x="74.7" y="59">+</text><path class="rail" d="M 89.4 59 L 109.4 59"/><path class="rail" d="M 40 59 L 45 59 Q 50 59 50 64 L 50 93 Q 50 98 55 98 L 60 98"/><rect class="terminal" x="60" y="86" width="29.4" height="24" rx="12"/><text class="lbl" x="74.7" y="98">-</text><path class="rail" d="M 89.4 98 L 94.4 98 Q 99.4 98 99.4 93 L 99.4 64 Q 99.4 59 104.4 59 L 109.4 59"/><polygon class="arrow" points="39,55 31,59 39,63"/><path class="rail" d="M 129.4 20 L 141.4 20"/><path class="rail" d="M 141.4 13 L 141.4 27"/></svg>
 
 term
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306.2 114" width="306.2" height="114" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.4 118" width="149.4" height="118" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -21,10 +21,10 @@ term
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 33 L 8 47"/><path class="rail" d="M 8 40 L 20 40"/><rect class="nonterminal" x="20" y="28" width="66.4" height="24" rx="3"/><text class="lbl" x="53.2" y="40">factor</text><path class="rail" d="M 86.4 40 L 98.4 40"/><path class="rail" d="M 98.4 40 L 118.4 40"/><path class="rail" d="M 118.4 40 L 128.4 40"/><path class="rail" d="M 128.4 40 L 138.4 40"/><rect class="terminal" x="138.4" y="28" width="29.4" height="24" rx="12"/><text class="lbl" x="153.1" y="40">*</text><path class="rail" d="M 167.8 40 L 187.8 40"/><path class="rail" d="M 128.4 40 L 128.4 69 Q 128.4 74 133.4 74 L 138.4 74"/><rect class="terminal" x="138.4" y="62" width="29.4" height="24" rx="12"/><text class="lbl" x="153.1" y="74">/</text><path class="rail" d="M 167.8 74 L 172.8 74 Q 177.8 74 177.8 69 L 177.8 45 Q 177.8 40 182.8 40 L 187.8 40"/><path class="rail" d="M 187.8 40 L 199.8 40"/><rect class="nonterminal" x="199.8" y="28" width="66.4" height="24" rx="3"/><text class="lbl" x="233" y="40">factor</text><path class="rail" d="M 266.2 40 L 286.2 40"/><path class="rail" d="M 276.2 40 L 276.2 86 Q 276.2 96 266.2 96 L 118.4 96 Q 108.4 96 108.4 86 L 108.4 40"/><polygon class="arrow" points="196.3,92 188.3,96 196.3,100"/><path class="rail" d="M 108.4 40 L 108.4 28 Q 108.4 18 118.4 18 L 266.2 18 Q 276.2 18 276.2 28 L 276.2 40"/><path class="rail" d="M 286.2 40 L 298.2 40"/><path class="rail" d="M 298.2 33 L 298.2 47"/></svg>
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 41.5 20"/><rect class="nonterminal" x="41.5" y="8" width="66.4" height="24" rx="3"/><text class="lbl" x="74.7" y="20">factor</text><path class="rail" d="M 107.9 20 L 129.4 20"/><path class="rail" d="M 109.4 20 L 119.4 20 Q 129.4 20 129.4 30 L 129.4 49 Q 129.4 59 119.4 59 L 30 59 Q 20 59 20 49 L 20 30 Q 20 20 30 20 L 40 20"/><path class="rail" d="M 40 59 L 60 59"/><rect class="terminal" x="60" y="47" width="29.4" height="24" rx="12"/><text class="lbl" x="74.7" y="59">*</text><path class="rail" d="M 89.4 59 L 109.4 59"/><path class="rail" d="M 40 59 L 45 59 Q 50 59 50 64 L 50 93 Q 50 98 55 98 L 60 98"/><rect class="terminal" x="60" y="86" width="29.4" height="24" rx="12"/><text class="lbl" x="74.7" y="98">/</text><path class="rail" d="M 89.4 98 L 94.4 98 Q 99.4 98 99.4 93 L 99.4 64 Q 99.4 59 104.4 59 L 109.4 59"/><polygon class="arrow" points="39,55 31,59 39,63"/><path class="rail" d="M 129.4 20 L 141.4 20"/><path class="rail" d="M 141.4 13 L 141.4 27"/></svg>
 
 factor
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258.8 74" width="258.8" height="74" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258.8 79" width="258.8" height="79" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -32,10 +32,10 @@ factor
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 30 20"/><path class="rail" d="M 30 20 L 40 20"/><rect class="nonterminal" x="40" y="8" width="66.4" height="24" rx="3"/><text class="lbl" x="73.2" y="20">number</text><path class="rail" d="M 106.4 20 L 218.8 20"/><path class="rail" d="M 218.8 20 L 238.8 20"/><path class="rail" d="M 30 20 L 30 49 Q 30 54 35 54 L 40 54"/><rect class="terminal" x="40" y="42" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="54">(</text><path class="rail" d="M 69.4 54 L 81.4 54"/><rect class="nonterminal" x="81.4" y="42" width="96" height="24" rx="3"/><text class="lbl" x="129.4" y="54">expression</text><path class="rail" d="M 177.4 54 L 189.4 54"/><rect class="terminal" x="189.4" y="42" width="29.4" height="24" rx="12"/><text class="lbl" x="204.1" y="54">)</text><path class="rail" d="M 218.8 54 L 223.8 54 Q 228.8 54 228.8 49 L 228.8 25 Q 228.8 20 233.8 20 L 238.8 20"/><path class="rail" d="M 238.8 20 L 250.8 20"/><path class="rail" d="M 250.8 13 L 250.8 27"/></svg>
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 40 20"/><rect class="nonterminal" x="40" y="8" width="66.4" height="24" rx="3"/><text class="lbl" x="73.2" y="20">number</text><path class="rail" d="M 106.4 20 L 218.8 20"/><path class="rail" d="M 218.8 20 L 238.8 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 54 Q 30 59 35 59 L 40 59"/><rect class="terminal" x="40" y="47" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="59">(</text><path class="rail" d="M 69.4 59 L 81.4 59"/><rect class="nonterminal" x="81.4" y="47" width="96" height="24" rx="3"/><text class="lbl" x="129.4" y="59">expression</text><path class="rail" d="M 177.4 59 L 189.4 59"/><rect class="terminal" x="189.4" y="47" width="29.4" height="24" rx="12"/><text class="lbl" x="204.1" y="59">)</text><path class="rail" d="M 218.8 59 L 223.8 59 Q 228.8 59 228.8 54 L 228.8 25 Q 228.8 20 233.8 20 L 238.8 20"/><path class="rail" d="M 238.8 20 L 250.8 20"/><path class="rail" d="M 250.8 13 L 250.8 27"/></svg>
 
 number
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 80" width="210" height="80" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 60" width="139" height="60" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -43,10 +43,10 @@ number
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 33 L 8 47"/><path class="rail" d="M 8 40 L 20 40"/><rect class="nonterminal" x="20" y="28" width="59" height="24" rx="3"/><text class="lbl" x="49.5" y="40">digit</text><path class="rail" d="M 79 40 L 91 40"/><path class="rail" d="M 91 40 L 111 40"/><rect class="nonterminal" x="111" y="28" width="59" height="24" rx="3"/><text class="lbl" x="140.5" y="40">digit</text><path class="rail" d="M 170 40 L 190 40"/><path class="rail" d="M 180 40 L 180 52 Q 180 62 170 62 L 111 62 Q 101 62 101 52 L 101 40"/><polygon class="arrow" points="144.5,58 136.5,62 144.5,66"/><path class="rail" d="M 101 40 L 101 28 Q 101 18 111 18 L 170 18 Q 180 18 180 28 L 180 40"/><path class="rail" d="M 190 40 L 202 40"/><path class="rail" d="M 202 33 L 202 47"/></svg>
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 40 20"/><rect class="nonterminal" x="40" y="8" width="59" height="24" rx="3"/><text class="lbl" x="69.5" y="20">digit</text><path class="rail" d="M 99 20 L 119 20"/><path class="rail" d="M 99 20 L 109 20 Q 119 20 119 30 L 119 37 Q 119 47 109 47 L 30 47 Q 20 47 20 37 L 20 30 Q 20 20 30 20 L 40 20"/><polygon class="arrow" points="73.5,43 65.5,47 73.5,51"/><path class="rail" d="M 119 20 L 131 20"/><path class="rail" d="M 131 13 L 131 27"/></svg>
 
 digit
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.4 346" width="109.4" height="346" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.4 391" width="109.4" height="391" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -54,10 +54,10 @@ digit
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 30 20"/><path class="rail" d="M 30 20 L 40 20"/><rect class="terminal" x="40" y="8" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="20">0</text><path class="rail" d="M 69.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 49 Q 30 54 35 54 L 40 54"/><rect class="terminal" x="40" y="42" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="54">1</text><path class="rail" d="M 69.4 54 L 74.4 54 Q 79.4 54 79.4 49 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 83 Q 30 88 35 88 L 40 88"/><rect class="terminal" x="40" y="76" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="88">2</text><path class="rail" d="M 69.4 88 L 74.4 88 Q 79.4 88 79.4 83 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 117 Q 30 122 35 122 L 40 122"/><rect class="terminal" x="40" y="110" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="122">3</text><path class="rail" d="M 69.4 122 L 74.4 122 Q 79.4 122 79.4 117 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 151 Q 30 156 35 156 L 40 156"/><rect class="terminal" x="40" y="144" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="156">4</text><path class="rail" d="M 69.4 156 L 74.4 156 Q 79.4 156 79.4 151 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 185 Q 30 190 35 190 L 40 190"/><rect class="terminal" x="40" y="178" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="190">5</text><path class="rail" d="M 69.4 190 L 74.4 190 Q 79.4 190 79.4 185 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 219 Q 30 224 35 224 L 40 224"/><rect class="terminal" x="40" y="212" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="224">6</text><path class="rail" d="M 69.4 224 L 74.4 224 Q 79.4 224 79.4 219 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 253 Q 30 258 35 258 L 40 258"/><rect class="terminal" x="40" y="246" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="258">7</text><path class="rail" d="M 69.4 258 L 74.4 258 Q 79.4 258 79.4 253 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 287 Q 30 292 35 292 L 40 292"/><rect class="terminal" x="40" y="280" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="292">8</text><path class="rail" d="M 69.4 292 L 74.4 292 Q 79.4 292 79.4 287 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 321 Q 30 326 35 326 L 40 326"/><rect class="terminal" x="40" y="314" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="326">9</text><path class="rail" d="M 69.4 326 L 74.4 326 Q 79.4 326 79.4 321 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 89.4 20 L 101.4 20"/><path class="rail" d="M 101.4 13 L 101.4 27"/></svg>
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 40 20"/><rect class="terminal" x="40" y="8" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="20">0</text><path class="rail" d="M 69.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 54 Q 30 59 35 59 L 40 59"/><rect class="terminal" x="40" y="47" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="59">1</text><path class="rail" d="M 69.4 59 L 74.4 59 Q 79.4 59 79.4 54 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 93 Q 30 98 35 98 L 40 98"/><rect class="terminal" x="40" y="86" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="98">2</text><path class="rail" d="M 69.4 98 L 74.4 98 Q 79.4 98 79.4 93 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 132 Q 30 137 35 137 L 40 137"/><rect class="terminal" x="40" y="125" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="137">3</text><path class="rail" d="M 69.4 137 L 74.4 137 Q 79.4 137 79.4 132 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 171 Q 30 176 35 176 L 40 176"/><rect class="terminal" x="40" y="164" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="176">4</text><path class="rail" d="M 69.4 176 L 74.4 176 Q 79.4 176 79.4 171 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 210 Q 30 215 35 215 L 40 215"/><rect class="terminal" x="40" y="203" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="215">5</text><path class="rail" d="M 69.4 215 L 74.4 215 Q 79.4 215 79.4 210 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 249 Q 30 254 35 254 L 40 254"/><rect class="terminal" x="40" y="242" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="254">6</text><path class="rail" d="M 69.4 254 L 74.4 254 Q 79.4 254 79.4 249 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 288 Q 30 293 35 293 L 40 293"/><rect class="terminal" x="40" y="281" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="293">7</text><path class="rail" d="M 69.4 293 L 74.4 293 Q 79.4 293 79.4 288 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 327 Q 30 332 35 332 L 40 332"/><rect class="terminal" x="40" y="320" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="332">8</text><path class="rail" d="M 69.4 332 L 74.4 332 Q 79.4 332 79.4 327 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 366 Q 30 371 35 371 L 40 371"/><rect class="terminal" x="40" y="359" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="371">9</text><path class="rail" d="M 69.4 371 L 74.4 371 Q 79.4 371 79.4 366 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 89.4 20 L 101.4 20"/><path class="rail" d="M 101.4 13 L 101.4 27"/></svg>
 
 padded
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 74" width="139" height="74" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 65" width="139" height="65" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -65,7 +65,7 @@ padded
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 40 20"/><rect class="nonterminal" x="40" y="8" width="59" height="24" rx="3"/><text class="lbl" x="69.5" y="20">digit</text><path class="rail" d="M 99 20 L 119 20"/><path class="rail" d="M 109 20 L 109 44 Q 109 54 99 54 L 40 54 Q 30 54 30 44 L 30 20"/><polygon class="arrow" points="73.5,50 65.5,54 73.5,58"/><rect class="count-bg" x="59.1" y="36" width="20.8" height="16" rx="3"/><text class="count" x="69.5" y="44">3×</text><path class="rail" d="M 119 20 L 131 20"/><path class="rail" d="M 131 13 L 131 27"/></svg>
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 40 20"/><rect class="nonterminal" x="40" y="8" width="59" height="24" rx="3"/><text class="lbl" x="69.5" y="20">digit</text><path class="rail" d="M 99 20 L 119 20"/><path class="rail" d="M 99 20 L 109 20 Q 119 20 119 30 L 119 37 Q 119 47 109 47 L 30 47 Q 20 47 20 37 L 20 30 Q 20 20 30 20 L 40 20"/><polygon class="arrow" points="73.5,43 65.5,47 73.5,51"/><rect class="count-bg" x="59.1" y="39" width="20.8" height="16" rx="3"/><text class="count" x="69.5" y="47">3×</text><path class="rail" d="M 119 20 L 131 20"/><path class="rail" d="M 131 13 L 131 27"/></svg>
 
 letter
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.2 40" width="84.2" height="40" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
@@ -90,7 +90,7 @@ consonant
 .count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><rect class="exception" x="20" y="8" width="125.6" height="24" rx="3"/><text class="lbl" x="82.8" y="20">letter − vowel</text><path class="rail" d="M 145.6 20 L 157.6 20"/><path class="rail" d="M 157.6 13 L 157.6 27"/></svg>
 
 vowel
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.4 176" width="109.4" height="176" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.4 196" width="109.4" height="196" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -98,10 +98,10 @@ vowel
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 30 20"/><path class="rail" d="M 30 20 L 40 20"/><rect class="terminal" x="40" y="8" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="20">A</text><path class="rail" d="M 69.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 49 Q 30 54 35 54 L 40 54"/><rect class="terminal" x="40" y="42" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="54">E</text><path class="rail" d="M 69.4 54 L 74.4 54 Q 79.4 54 79.4 49 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 83 Q 30 88 35 88 L 40 88"/><rect class="terminal" x="40" y="76" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="88">I</text><path class="rail" d="M 69.4 88 L 74.4 88 Q 79.4 88 79.4 83 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 117 Q 30 122 35 122 L 40 122"/><rect class="terminal" x="40" y="110" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="122">O</text><path class="rail" d="M 69.4 122 L 74.4 122 Q 79.4 122 79.4 117 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 30 20 L 30 151 Q 30 156 35 156 L 40 156"/><rect class="terminal" x="40" y="144" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="156">U</text><path class="rail" d="M 69.4 156 L 74.4 156 Q 79.4 156 79.4 151 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 89.4 20 L 101.4 20"/><path class="rail" d="M 101.4 13 L 101.4 27"/></svg>
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 13 L 8 27"/><path class="rail" d="M 8 20 L 20 20"/><path class="rail" d="M 20 20 L 40 20"/><rect class="terminal" x="40" y="8" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="20">A</text><path class="rail" d="M 69.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 54 Q 30 59 35 59 L 40 59"/><rect class="terminal" x="40" y="47" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="59">E</text><path class="rail" d="M 69.4 59 L 74.4 59 Q 79.4 59 79.4 54 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 93 Q 30 98 35 98 L 40 98"/><rect class="terminal" x="40" y="86" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="98">I</text><path class="rail" d="M 69.4 98 L 74.4 98 Q 79.4 98 79.4 93 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 132 Q 30 137 35 137 L 40 137"/><rect class="terminal" x="40" y="125" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="137">O</text><path class="rail" d="M 69.4 137 L 74.4 137 Q 79.4 137 79.4 132 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 20 20 L 25 20 Q 30 20 30 25 L 30 171 Q 30 176 35 176 L 40 176"/><rect class="terminal" x="40" y="164" width="29.4" height="24" rx="12"/><text class="lbl" x="54.7" y="176">U</text><path class="rail" d="M 69.4 176 L 74.4 176 Q 79.4 176 79.4 171 L 79.4 25 Q 79.4 20 84.4 20 L 89.4 20"/><path class="rail" d="M 89.4 20 L 101.4 20"/><path class="rail" d="M 101.4 13 L 101.4 27"/></svg>
 
 optional greeting
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60" width="210" height="60" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 55" width="210" height="55" role="img"><style>.rail { fill: none; stroke: #394656; stroke-width: 1.5; }
 .arrow { fill: #394656; }
 .terminal { fill: #eef3fb; stroke: #3a67a8; stroke-width: 1.5; }
 .nonterminal { fill: #ffffff; stroke: #394656; stroke-width: 1.5; }
@@ -109,7 +109,7 @@ optional greeting
 .exception { fill: #fdeceb; stroke: #b0413a; stroke-width: 1.5; }
 .lbl { fill: #1b2430; font-family: 'SFMono-Regular','Consolas','Liberation Mono',monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
 .count-bg { fill: #ffffff; }
-.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 33 L 8 47"/><path class="rail" d="M 8 40 L 20 40"/><path class="rail" d="M 20 40 L 40 40"/><rect class="terminal" x="40" y="28" width="59" height="24" rx="12"/><text class="lbl" x="69.5" y="40">hello</text><path class="rail" d="M 99 40 L 119 40"/><path class="rail" d="M 30 40 L 30 28 Q 30 18 40 18 L 99 18 Q 109 18 109 28 L 109 40"/><path class="rail" d="M 119 40 L 131 40"/><rect class="terminal" x="131" y="28" width="59" height="24" rx="12"/><text class="lbl" x="160.5" y="40">world</text><path class="rail" d="M 190 40 L 202 40"/><path class="rail" d="M 202 33 L 202 47"/></svg>"
+.count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }</style><path class="rail" d="M 8 28 L 8 42"/><path class="rail" d="M 8 35 L 20 35"/><path class="rail" d="M 20 35 L 40 35"/><rect class="terminal" x="40" y="23" width="59" height="24" rx="12"/><text class="lbl" x="69.5" y="35">hello</text><path class="rail" d="M 99 35 L 119 35"/><path class="rail" d="M 20 35 L 25 35 Q 30 35 30 30 L 30 18 Q 30 8 40 8 L 99 8 Q 109 8 109 18 L 109 30 Q 109 35 114 35 L 119 35"/><path class="rail" d="M 119 35 L 131 35"/><rect class="terminal" x="131" y="23" width="59" height="24" rx="12"/><text class="lbl" x="160.5" y="35">world</text><path class="rail" d="M 190 35 L 202 35"/><path class="rail" d="M 202 28 L 202 42"/></svg>"
 `;
 
 exports[`renderers — golden snapshots > matches the TikZ golden snapshot 1`] = `
@@ -124,30 +124,24 @@ exports[`renderers — golden snapshots > matches the TikZ golden snapshot 1`] =
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
 \\begin{tikzpicture}[x=1pt, y=1pt]
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,81) -- (8,67);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,74) -- (20,74);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (20,62) rectangle (71.6,86);
-  \\node[font=\\ttfamily\\small] at (45.8,74) {term};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (71.6,74) -- (83.6,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (83.6,74) -- (103.6,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (103.6,74) -- (113.6,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (113.6,74) -- (123.6,74);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (123.6,62) rectangle (153,86);
-  \\node[font=\\ttfamily\\small] at (138.3,74) {+};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (153,74) -- (173,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (113.6,74) -- (113.6,40) -- (123.6,40);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (123.6,28) rectangle (153,52);
-  \\node[font=\\ttfamily\\small] at (138.3,40) {-};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (153,40) -- (163,40) -- (163,74) -- (173,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (173,74) -- (185,74);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (185,62) rectangle (236.6,86);
-  \\node[font=\\ttfamily\\small] at (210.8,74) {term};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (236.6,74) -- (256.6,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (246.6,74) -- (246.6,18) -- (93.6,18) -- (93.6,74);
-  \\fill[sdgLine] (174.1,22) -- (166.1,18) -- (174.1,14) -- cycle;
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (93.6,74) -- (93.6,96) -- (246.6,96) -- (246.6,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (256.6,74) -- (268.6,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (268.6,81) -- (268.6,67);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,105) -- (8,91);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,98) -- (20,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,98) -- (48.9,98);
+  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (48.9,86) rectangle (100.5,110);
+  \\node[font=\\ttfamily\\small] at (74.7,98) {term};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (100.5,98) -- (129.4,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (109.4,98) -- (129.4,98) -- (129.4,59) -- (20,59) -- (20,98) -- (40,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (40,59) -- (60,59);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (60,47) rectangle (89.4,71);
+  \\node[font=\\ttfamily\\small] at (74.7,59) {+};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,59) -- (109.4,59);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (40,59) -- (50,59) -- (50,20) -- (60,20);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (60,8) rectangle (89.4,32);
+  \\node[font=\\ttfamily\\small] at (74.7,20) {-};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,20) -- (99.4,20) -- (99.4,59) -- (109.4,59);
+  \\fill[sdgLine] (39,63) -- (31,59) -- (39,55) -- cycle;
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (129.4,98) -- (141.4,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (141.4,105) -- (141.4,91);
 \\end{tikzpicture}
 
 term
@@ -161,30 +155,24 @@ term
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
 \\begin{tikzpicture}[x=1pt, y=1pt]
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,81) -- (8,67);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,74) -- (20,74);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (20,62) rectangle (86.4,86);
-  \\node[font=\\ttfamily\\small] at (53.2,74) {factor};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (86.4,74) -- (98.4,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (98.4,74) -- (118.4,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (118.4,74) -- (128.4,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (128.4,74) -- (138.4,74);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (138.4,62) rectangle (167.8,86);
-  \\node[font=\\ttfamily\\small] at (153.1,74) {*};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (167.8,74) -- (187.8,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (128.4,74) -- (128.4,40) -- (138.4,40);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (138.4,28) rectangle (167.8,52);
-  \\node[font=\\ttfamily\\small] at (153.1,40) {/};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (167.8,40) -- (177.8,40) -- (177.8,74) -- (187.8,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (187.8,74) -- (199.8,74);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (199.8,62) rectangle (266.2,86);
-  \\node[font=\\ttfamily\\small] at (233,74) {factor};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (266.2,74) -- (286.2,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (276.2,74) -- (276.2,18) -- (108.4,18) -- (108.4,74);
-  \\fill[sdgLine] (196.3,22) -- (188.3,18) -- (196.3,14) -- cycle;
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (108.4,74) -- (108.4,96) -- (276.2,96) -- (276.2,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (286.2,74) -- (298.2,74);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (298.2,81) -- (298.2,67);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,105) -- (8,91);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,98) -- (20,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,98) -- (41.5,98);
+  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (41.5,86) rectangle (107.9,110);
+  \\node[font=\\ttfamily\\small] at (74.7,98) {factor};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (107.9,98) -- (129.4,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (109.4,98) -- (129.4,98) -- (129.4,59) -- (20,59) -- (20,98) -- (40,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (40,59) -- (60,59);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (60,47) rectangle (89.4,71);
+  \\node[font=\\ttfamily\\small] at (74.7,59) {*};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,59) -- (109.4,59);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (40,59) -- (50,59) -- (50,20) -- (60,20);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (60,8) rectangle (89.4,32);
+  \\node[font=\\ttfamily\\small] at (74.7,20) {/};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,20) -- (99.4,20) -- (99.4,59) -- (109.4,59);
+  \\fill[sdgLine] (39,63) -- (31,59) -- (39,55) -- cycle;
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (129.4,98) -- (141.4,98);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (141.4,105) -- (141.4,91);
 \\end{tikzpicture}
 
 factor
@@ -198,15 +186,14 @@ factor
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
 \\begin{tikzpicture}[x=1pt, y=1pt]
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,61) -- (8,47);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,54) -- (20,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,54) -- (30,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,54) -- (40,54);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (40,42) rectangle (106.4,66);
-  \\node[font=\\ttfamily\\small] at (73.2,54) {number};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (106.4,54) -- (218.8,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (218.8,54) -- (238.8,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,54) -- (30,20) -- (40,20);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,66) -- (8,52);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,59) -- (20,59);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,59) -- (40,59);
+  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (40,47) rectangle (106.4,71);
+  \\node[font=\\ttfamily\\small] at (73.2,59) {number};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (106.4,59) -- (218.8,59);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (218.8,59) -- (238.8,59);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,59) -- (30,59) -- (30,20) -- (40,20);
   \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,8) rectangle (69.4,32);
   \\node[font=\\ttfamily\\small] at (54.7,20) {(};
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (81.4,20);
@@ -215,9 +202,9 @@ factor
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (177.4,20) -- (189.4,20);
   \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (189.4,8) rectangle (218.8,32);
   \\node[font=\\ttfamily\\small] at (204.1,20) {)};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (218.8,20) -- (228.8,20) -- (228.8,54) -- (238.8,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (238.8,54) -- (250.8,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (250.8,61) -- (250.8,47);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (218.8,20) -- (228.8,20) -- (228.8,59) -- (238.8,59);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (238.8,59) -- (250.8,59);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (250.8,66) -- (250.8,52);
 \\end{tikzpicture}
 
 number
@@ -233,18 +220,14 @@ number
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,47) -- (8,33);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,40) -- (20,40);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (20,28) rectangle (79,52);
-  \\node[font=\\ttfamily\\small] at (49.5,40) {digit};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (79,40) -- (91,40);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (91,40) -- (111,40);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (111,28) rectangle (170,52);
-  \\node[font=\\ttfamily\\small] at (140.5,40) {digit};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (170,40) -- (190,40);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (180,40) -- (180,18) -- (101,18) -- (101,40);
-  \\fill[sdgLine] (144.5,22) -- (136.5,18) -- (144.5,14) -- cycle;
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101,40) -- (101,62) -- (180,62) -- (180,40);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (190,40) -- (202,40);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (202,47) -- (202,33);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,40) -- (40,40);
+  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (40,28) rectangle (99,52);
+  \\node[font=\\ttfamily\\small] at (69.5,40) {digit};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (99,40) -- (119,40);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (99,40) -- (119,40) -- (119,13) -- (20,13) -- (20,40) -- (40,40);
+  \\fill[sdgLine] (73.5,17) -- (65.5,13) -- (73.5,9) -- cycle;
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (119,40) -- (131,40);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (131,47) -- (131,33);
 \\end{tikzpicture}
 
 digit
@@ -258,51 +241,50 @@ digit
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
 \\begin{tikzpicture}[x=1pt, y=1pt]
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,333) -- (8,319);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,326) -- (20,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,326) -- (30,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (40,326);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,314) rectangle (69.4,338);
-  \\node[font=\\ttfamily\\small] at (54.7,326) {0};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,292) -- (40,292);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,280) rectangle (69.4,304);
-  \\node[font=\\ttfamily\\small] at (54.7,292) {1};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,292) -- (79.4,292) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,258) -- (40,258);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,246) rectangle (69.4,270);
-  \\node[font=\\ttfamily\\small] at (54.7,258) {2};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,258) -- (79.4,258) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,224) -- (40,224);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,212) rectangle (69.4,236);
-  \\node[font=\\ttfamily\\small] at (54.7,224) {3};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,224) -- (79.4,224) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,190) -- (40,190);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,178) rectangle (69.4,202);
-  \\node[font=\\ttfamily\\small] at (54.7,190) {4};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,190) -- (79.4,190) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,156) -- (40,156);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,144) rectangle (69.4,168);
-  \\node[font=\\ttfamily\\small] at (54.7,156) {5};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,156) -- (79.4,156) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,122) -- (40,122);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,110) rectangle (69.4,134);
-  \\node[font=\\ttfamily\\small] at (54.7,122) {6};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,122) -- (79.4,122) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,88) -- (40,88);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,76) rectangle (69.4,100);
-  \\node[font=\\ttfamily\\small] at (54.7,88) {7};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,88) -- (79.4,88) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,54) -- (40,54);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,42) rectangle (69.4,66);
-  \\node[font=\\ttfamily\\small] at (54.7,54) {8};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,54) -- (79.4,54) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,326) -- (30,20) -- (40,20);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,378) -- (8,364);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,371) -- (20,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (40,371);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,359) rectangle (69.4,383);
+  \\node[font=\\ttfamily\\small] at (54.7,371) {0};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,332) -- (40,332);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,320) rectangle (69.4,344);
+  \\node[font=\\ttfamily\\small] at (54.7,332) {1};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,332) -- (79.4,332) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,293) -- (40,293);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,281) rectangle (69.4,305);
+  \\node[font=\\ttfamily\\small] at (54.7,293) {2};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,293) -- (79.4,293) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,254) -- (40,254);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,242) rectangle (69.4,266);
+  \\node[font=\\ttfamily\\small] at (54.7,254) {3};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,254) -- (79.4,254) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,215) -- (40,215);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,203) rectangle (69.4,227);
+  \\node[font=\\ttfamily\\small] at (54.7,215) {4};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,215) -- (79.4,215) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,176) -- (40,176);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,164) rectangle (69.4,188);
+  \\node[font=\\ttfamily\\small] at (54.7,176) {5};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,176) -- (79.4,176) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,137) -- (40,137);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,125) rectangle (69.4,149);
+  \\node[font=\\ttfamily\\small] at (54.7,137) {6};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,137) -- (79.4,137) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,98) -- (40,98);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,86) rectangle (69.4,110);
+  \\node[font=\\ttfamily\\small] at (54.7,98) {7};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,98) -- (79.4,98) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,59) -- (40,59);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,47) rectangle (69.4,71);
+  \\node[font=\\ttfamily\\small] at (54.7,59) {8};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,59) -- (79.4,59) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,371) -- (30,371) -- (30,20) -- (40,20);
   \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,8) rectangle (69.4,32);
   \\node[font=\\ttfamily\\small] at (54.7,20) {9};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (79.4,20) -- (79.4,326) -- (89.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,326) -- (101.4,326);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101.4,333) -- (101.4,319);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (79.4,20) -- (79.4,371) -- (89.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,371) -- (101.4,371);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101.4,378) -- (101.4,364);
 \\end{tikzpicture}
 
 padded
@@ -316,17 +298,17 @@ padded
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
 \\begin{tikzpicture}[x=1pt, y=1pt]
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,61) -- (8,47);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,54) -- (20,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,54) -- (40,54);
-  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (40,42) rectangle (99,66);
-  \\node[font=\\ttfamily\\small] at (69.5,54) {digit};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (99,54) -- (119,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (109,54) -- (109,20) -- (30,20) -- (30,54);
-  \\fill[sdgLine] (73.5,24) -- (65.5,20) -- (73.5,16) -- cycle;
-  \\node[fill=white, inner sep=1pt, font=\\ttfamily\\footnotesize, text=sdgLabel] at (69.5,30) {3$\\times$};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (119,54) -- (131,54);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (131,61) -- (131,47);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,52) -- (8,38);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,45) -- (20,45);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,45) -- (40,45);
+  \\draw[line width=1.2pt, draw=sdgLine, fill=white, rounded corners=3pt] (40,33) rectangle (99,57);
+  \\node[font=\\ttfamily\\small] at (69.5,45) {digit};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (99,45) -- (119,45);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (99,45) -- (119,45) -- (119,18) -- (20,18) -- (20,45) -- (40,45);
+  \\fill[sdgLine] (73.5,22) -- (65.5,18) -- (73.5,14) -- cycle;
+  \\node[fill=white, inner sep=1pt, font=\\ttfamily\\footnotesize, text=sdgLabel] at (69.5,18) {3$\\times$};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (119,45) -- (131,45);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (131,52) -- (131,38);
 \\end{tikzpicture}
 
 letter
@@ -378,31 +360,30 @@ vowel
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
 \\begin{tikzpicture}[x=1pt, y=1pt]
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,163) -- (8,149);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,156) -- (20,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,156) -- (30,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,156) -- (40,156);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,144) rectangle (69.4,168);
-  \\node[font=\\ttfamily\\small] at (54.7,156) {A};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,156) -- (89.4,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,156) -- (30,122) -- (40,122);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,110) rectangle (69.4,134);
-  \\node[font=\\ttfamily\\small] at (54.7,122) {E};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,122) -- (79.4,122) -- (79.4,156) -- (89.4,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,156) -- (30,88) -- (40,88);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,76) rectangle (69.4,100);
-  \\node[font=\\ttfamily\\small] at (54.7,88) {I};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,88) -- (79.4,88) -- (79.4,156) -- (89.4,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,156) -- (30,54) -- (40,54);
-  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,42) rectangle (69.4,66);
-  \\node[font=\\ttfamily\\small] at (54.7,54) {O};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,54) -- (79.4,54) -- (79.4,156) -- (89.4,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,156) -- (30,20) -- (40,20);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,183) -- (8,169);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,176) -- (20,176);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,176) -- (40,176);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,164) rectangle (69.4,188);
+  \\node[font=\\ttfamily\\small] at (54.7,176) {A};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,176) -- (89.4,176);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,176) -- (30,176) -- (30,137) -- (40,137);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,125) rectangle (69.4,149);
+  \\node[font=\\ttfamily\\small] at (54.7,137) {E};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,137) -- (79.4,137) -- (79.4,176) -- (89.4,176);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,176) -- (30,176) -- (30,98) -- (40,98);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,86) rectangle (69.4,110);
+  \\node[font=\\ttfamily\\small] at (54.7,98) {I};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,98) -- (79.4,98) -- (79.4,176) -- (89.4,176);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,176) -- (30,176) -- (30,59) -- (40,59);
+  \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,47) rectangle (69.4,71);
+  \\node[font=\\ttfamily\\small] at (54.7,59) {O};
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,59) -- (79.4,59) -- (79.4,176) -- (89.4,176);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,176) -- (30,176) -- (30,20) -- (40,20);
   \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,8) rectangle (69.4,32);
   \\node[font=\\ttfamily\\small] at (54.7,20) {U};
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (79.4,20) -- (79.4,156) -- (89.4,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,156) -- (101.4,156);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101.4,163) -- (101.4,149);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (79.4,20) -- (79.4,176) -- (89.4,176);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,176) -- (101.4,176);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101.4,183) -- (101.4,169);
 \\end{tikzpicture}
 
 optional greeting
@@ -422,7 +403,7 @@ optional greeting
   \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,8) rectangle (99,32);
   \\node[font=\\ttfamily\\small] at (69.5,20) {hello};
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (99,20) -- (119,20);
-  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (30,20) -- (30,42) -- (109,42) -- (109,20);
+  \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,20) -- (30,20) -- (30,47) -- (109,47) -- (109,20) -- (119,20);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (119,20) -- (131,20);
   \\draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (131,8) rectangle (190,32);
   \\node[font=\\ttfamily\\small] at (160.5,20) {world};

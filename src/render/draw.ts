@@ -92,18 +92,21 @@ function drawNode(node: DiagramNode, x: number, railY: number, backend: DiagramB
       const child = node.child!;
       const c = child.box!;
       const branchX = x + 2 * ARC;
+      const itemR = branchX + c.width;
       const rightEdge = x + box.width;
-      // main line: lead-in, child, lead-out (never drawn through the child)
+      const yTop = railY - c.up - V_SPACE;
+      // Main line runs straight through the child (split so nothing shows behind the box).
       backend.rail([p(x, railY), p(branchX, railY)]);
       drawNode(child, branchX, railY, backend);
-      backend.rail([p(branchX + c.width, railY), p(rightEdge, railY)]);
-      // bypass line above
-      const yby = railY - (c.up + V_SPACE);
+      backend.rail([p(itemR, railY), p(rightEdge, railY)]);
+      // Bypass rides above, one continuous path — curves out with the flow, back in with it.
       backend.rail([
+        p(x, railY),
         p(x + ARC, railY),
-        p(x + ARC, yby),
-        p(rightEdge - ARC, yby),
+        p(x + ARC, yTop),
+        p(rightEdge - ARC, yTop),
         p(rightEdge - ARC, railY),
+        p(rightEdge, railY),
       ]);
       return;
     }
@@ -123,28 +126,31 @@ function drawChoice(node: DiagramNode, x: number, railY: number, backend: Diagra
   const rightEdge = x + box.width;
   const branchEnd = branchX + innerWidth;
 
-  // entry stub shared by every branch's left connector
-  backend.rail([p(x, railY), p(x + ARC, railY)]);
-
-  // main branch on the entry rail
+  // main branch on the entry rail (straight through)
   const main = kids[0];
   const mb = main.box!;
-  backend.rail([p(x + ARC, railY), p(branchX, railY)]);
+  backend.rail([p(x, railY), p(branchX, railY)]);
   drawNode(main, branchX, railY, backend);
   if (mb.width < innerWidth) backend.rail([p(branchX + mb.width, railY), p(branchEnd, railY)]);
   backend.rail([p(branchEnd, railY), p(rightEdge, railY)]);
 
-  // remaining branches stacked below
+  // remaining branches stacked below — each a continuous path (rail → arc down →
+  // child → arc up → rail) so the divergence and convergence are rounded.
   let running = railY + mb.down;
   for (let i = 1; i < kids.length; i++) {
     const cb = kids[i].box!;
     running += V_SPACE;
     const yi = running + cb.up;
     running = yi + cb.down;
-    backend.rail([p(x + ARC, railY), p(x + ARC, yi), p(branchX, yi)]);
+    backend.rail([p(x, railY), p(x + ARC, railY), p(x + ARC, yi), p(branchX, yi)]);
     drawNode(kids[i], branchX, yi, backend);
     if (cb.width < innerWidth) backend.rail([p(branchX + cb.width, yi), p(branchEnd, yi)]);
-    backend.rail([p(branchEnd, yi), p(rightEdge - ARC, yi), p(rightEdge - ARC, railY), p(rightEdge, railY)]);
+    backend.rail([
+      p(branchEnd, yi),
+      p(rightEdge - ARC, yi),
+      p(rightEdge - ARC, railY),
+      p(rightEdge, railY),
+    ]);
   }
 }
 
@@ -152,32 +158,56 @@ function drawLoop(node: DiagramNode, x: number, railY: number, backend: DiagramB
   const box = node.box!;
   const child = node.child!;
   const c = child.box!;
-  const branchX = x + 2 * ARC;
+  const sep = node.separator;
+  const s = sep?.box;
+  const inner = box.innerWidth ?? c.width;
   const rightEdge = x + box.width;
+  const mid = (x + rightEdge) / 2;
+  // Centre the child over the inner width (the loop or its separator may be wider).
+  const childX = x + 2 * ARC + (inner - c.width) / 2;
+  const childR = childX + c.width;
 
-  backend.rail([p(x, railY), p(branchX, railY)]);
-  drawNode(child, branchX, railY, backend);
-  backend.rail([p(branchX + c.width, railY), p(rightEdge, railY)]);
+  // Child sits on the main line; the loop-back rides below, travelled right-to-left
+  // (reversing direction is what reads as "repeat"): box → down → back → up → box.
+  backend.rail([p(x, railY), p(childX, railY)]);
+  drawNode(child, childX, railY, backend);
+  backend.rail([p(childR, railY), p(rightEdge, railY)]);
 
-  // return line below (travelled right-to-left)
-  const yret = railY + c.down + V_SPACE + (node.label ? HALF : 0);
+  const yLoop = railY + c.down + V_SPACE + (s ? s.up : 0);
+  // The loop leaves the box moving *forward*, curves down at the right edge, runs
+  // right-to-left underneath, curves up at the left edge, and re-enters moving
+  // *forward*. Risers sit at the outer edges (with a lead-in along the rail so the
+  // corners round) — that keeps entry and exit tangent to the flow, with the only
+  // direction reversal happening on the bottom leg, where the arrow lives.
   backend.rail([
-    p(rightEdge - ARC, railY),
-    p(rightEdge - ARC, yret),
-    p(x + ARC, yret),
-    p(x + ARC, railY),
+    p(rightEdge - 2 * ARC, railY),
+    p(rightEdge, railY),
+    p(rightEdge, yLoop),
+    p(x, yLoop),
+    p(x, railY),
+    p(x + 2 * ARC, railY),
   ]);
-  backend.arrow((x + rightEdge) / 2, yret, "left");
-  if (node.label) backend.label((x + rightEdge) / 2, yret - HALF + 2, node.label);
 
-  // bypass above for zero-or-more
+  if (sep && s) {
+    // The separator token rides on the backward loop, centred under the child.
+    const sepX = mid - s.width / 2;
+    drawNode(sep, sepX, yLoop, backend);
+    backend.arrow((x + ARC + sepX) / 2, yLoop, "left"); // arrow on the clear left leg
+  } else {
+    backend.arrow(mid, yLoop, "left");
+  }
+
   if (node.zeroOrMore) {
-    const yby = railY - (c.up + V_SPACE);
+    // `{ }` also allows *zero* passes: a bypass above, curving with the flow.
+    const yTop = railY - c.up - V_SPACE;
     backend.rail([
+      p(x, railY),
       p(x + ARC, railY),
-      p(x + ARC, yby),
-      p(rightEdge - ARC, yby),
+      p(x + ARC, yTop),
+      p(rightEdge - ARC, yTop),
       p(rightEdge - ARC, railY),
+      p(rightEdge, railY),
     ]);
   }
+  if (node.label) backend.label(mid, yLoop, node.label);
 }

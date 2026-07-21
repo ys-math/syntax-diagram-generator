@@ -30,8 +30,9 @@ export interface DiagramNode {
   kind: NodeKind;
   children?: DiagramNode[]; // seq, choice
   child?: DiagramNode; //      optional, loop
+  separator?: DiagramNode; //  loop: delimiter that rides on the backward loop
   text?: string; //            terminal, nonterminal, special, exception
-  zeroOrMore?: boolean; //     loop: bypass line present (ISO `{ }`)
+  zeroOrMore?: boolean; //     loop: forward bypass present (allows zero passes)
   label?: string; //           loop: count annotation (ISO `n *`)
   box?: Box; //                set by layout
 }
@@ -43,10 +44,12 @@ export const TEXT_PAD = 11; // horizontal padding inside a box
 export const BOX_H = 24; // box height
 export const MIN_BOX_W = 24;
 export const H_SEQ = 12; // gap between sequence elements
-export const V_SPACE = 10; // vertical gap between stacked branches
+export const V_SPACE = 15; // vertical gap between stacked branches (moderate breathing room)
 export const ARC = 10; // corner radius / fan width for rails
 export const TERMINUS = 12; // width of the start/end terminus rails
 export const PAD = 8; // outer padding around a diagram
+export const ARROW_CLEAR = 5; // vertical room a loop-back arrowhead needs below its rail
+export const LABEL_CLEAR = 10; // vertical room a loop count label needs below its rail
 
 /** Estimate the drawn width of a text label inside a box. */
 export function measureText(text: string): number {
@@ -58,11 +61,16 @@ export const N = {
   seq: (children: DiagramNode[]): DiagramNode => ({ kind: "seq", children }),
   choice: (children: DiagramNode[]): DiagramNode => ({ kind: "choice", children }),
   optional: (child: DiagramNode): DiagramNode => ({ kind: "optional", child }),
-  loop: (child: DiagramNode, zeroOrMore: boolean, label?: string): DiagramNode => ({
+  loop: (
+    child: DiagramNode,
+    zeroOrMore: boolean,
+    opts?: { label?: string; separator?: DiagramNode },
+  ): DiagramNode => ({
     kind: "loop",
     child,
     zeroOrMore,
-    ...(label ? { label } : {}),
+    ...(opts?.label ? { label: opts.label } : {}),
+    ...(opts?.separator ? { separator: opts.separator } : {}),
   }),
   terminal: (text: string): DiagramNode => ({ kind: "terminal", text }),
   nonterminal: (text: string): DiagramNode => ({ kind: "nonterminal", text }),

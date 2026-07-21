@@ -1,7 +1,9 @@
 import {
   ARC,
+  ARROW_CLEAR,
   BOX_H,
   H_SEQ,
+  LABEL_CLEAR,
   V_SPACE,
   measureText,
   type Box,
@@ -65,10 +67,10 @@ function measure(node: DiagramNode): Box {
 
     case "optional": {
       const b = layout(node.child!);
-      // Child on the main rail; bypass line routed above it.
+      // Child sits on the rail; the bypass arc rides *above* it.
       return {
         width: b.width + 4 * ARC,
-        up: b.up + V_SPACE + ARC,
+        up: b.up + V_SPACE,
         down: b.down,
         innerWidth: b.width,
       };
@@ -76,12 +78,19 @@ function measure(node: DiagramNode): Box {
 
     case "loop": {
       const b = layout(node.child!);
-      const returnExtent = node.label ? BOX_H : ARC; // room for the count label
+      const sep = node.separator ? layout(node.separator) : null;
+      const innerWidth = Math.max(b.width, sep?.width ?? 0);
+      // The backward loop rides V_SPACE below the child; whatever sits on it
+      // (a separator token, a count label, or just the arrowhead) needs headroom.
+      const loopExtra = sep
+        ? V_SPACE + sep.up + sep.down
+        : V_SPACE + (node.label ? LABEL_CLEAR : ARROW_CLEAR);
       return {
-        width: b.width + 4 * ARC,
-        up: b.up + (node.zeroOrMore ? V_SPACE + ARC : 0), // bypass line above
-        down: b.down + V_SPACE + returnExtent,
-        innerWidth: b.width,
+        width: innerWidth + 4 * ARC,
+        // The forward bypass (zero-or-more only) rides V_SPACE above the child.
+        up: node.zeroOrMore ? b.up + V_SPACE : b.up,
+        down: b.down + loopExtra,
+        innerWidth,
       };
     }
   }
