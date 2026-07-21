@@ -9,10 +9,14 @@ The parser, layout engine, and both renderers are written from scratch (no
 third-party railroad library), around a single measured diagram tree that every
 output backend consumes.
 
+**[Try it live →](https://ys-math.github.io/syntax-diagram-generator/)**
+
 ## Examples
 
 Each of these is the actual SVG output for a single rule (regenerate them with
-`npx vite-node scripts/gen-samples.ts`).
+`npx vite-node scripts/gen-samples.ts`). For a fuller, printable reference —
+every EBNF construct paired with its diagram, plus EBNF described in EBNF — see
+[`samples/samples.pdf`](samples/samples.pdf) (regenerate with `npm run samples`).
 
 `expression = term, { ("+" | "-"), term };` — concatenation with a repeated,
 alternating separator:
