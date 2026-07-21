@@ -162,12 +162,6 @@ push to `main`.
 3. Push to `main`. The site publishes at
    `https://<user>.github.io/<repo>/`.
 
-## Roadmap
-
-- BNF and ABNF (RFC 5234/7405) parsers into the same AST
-- Dialect auto-detection
-- PNG export
-
 ## License
 
 [MIT](./LICENSE)
