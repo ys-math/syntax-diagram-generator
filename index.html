@@ -41,13 +41,16 @@
           <h2>Grammar</h2>
           <button id="sample-btn" class="ghost small" type="button">Load sample</button>
         </div>
-        <textarea
-          id="grammar"
-          spellcheck="false"
-          autocomplete="off"
-          autocapitalize="off"
-          placeholder="Type or paste an EBNF grammar…"
-        ></textarea>
+        <div class="editor">
+          <div id="gutter" class="gutter" aria-hidden="true"></div>
+          <textarea
+            id="grammar"
+            spellcheck="false"
+            autocomplete="off"
+            autocapitalize="off"
+            placeholder="Type or paste an EBNF grammar…"
+          ></textarea>
+        </div>
         <div id="error-banner" class="error-banner" hidden>
           <span id="error-text"></span>
           <button id="error-dismiss" class="ghost small" type="button" aria-label="Dismiss">✕</button>
