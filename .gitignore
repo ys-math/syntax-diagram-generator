@@ -2,3 +2,10 @@ node_modules
 dist
 *.local
 .DS_Store
+
+# LaTeX build artifacts (samples/samples.pdf is committed; aux files are not)
+samples/*.aux
+samples/*.log
+samples/*.fls
+samples/*.fdb_latexmk
+samples/*.out
