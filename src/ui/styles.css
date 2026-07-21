@@ -85,7 +85,8 @@ body {
   color: var(--muted);
 }
 
-select {
+select,
+.field input[type="number"] {
   font: inherit;
   font-size: 13px;
   padding: 5px 8px;
@@ -93,6 +94,10 @@ select {
   border: 1px solid var(--border);
   background: var(--panel-2);
   color: var(--text);
+}
+
+.field input[type="number"] {
+  width: 66px;
 }
 
 button {

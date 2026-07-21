@@ -20,6 +20,17 @@
           <span>Dialect</span>
           <select id="dialect"></select>
         </label>
+        <label class="field">
+          <span>Fit</span>
+          <select id="fit-mode" title="How wide diagrams fit the LaTeX page">
+            <option value="shrink">Shrink</option>
+            <option value="wrap">Wrap</option>
+          </select>
+        </label>
+        <label class="field" id="wrap-width-field" hidden>
+          <span>Width (cm)</span>
+          <input id="wrap-width" type="number" min="1" step="0.5" value="12.7" />
+        </label>
         <button id="theme-toggle" class="ghost" type="button" title="Toggle light/dark">◑</button>
       </div>
     </header>

@@ -17,8 +17,9 @@ const HALF = BOX_H / 2;
  * from the horizontal rail). Pure measurement — no coordinates yet; the draw
  * pass positions nodes using these boxes.
  *
- * The single-line assumption lives only in `seq`; the rest of the engine is
- * wrap-agnostic, so adding line-wrapping later is a localized change here.
+ * Measurement is single-line: each `seq` gets its full unwrapped width. Wrap mode
+ * doesn't change measurement — it repacks the top-level sequence's measured
+ * children into rows at draw time (see `drawWrappedSeq` in the draw pass).
  */
 export function layout(node: DiagramNode): Box {
   const box = measure(node);

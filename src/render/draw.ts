@@ -11,6 +11,8 @@ import {
 import type { BoxStyle, DiagramBackend, Point } from "./backend";
 
 const HALF = BOX_H / 2;
+// Vertical gap between snaked rows (holds the return sweep with breathing room).
+const ROW_GAP = 24;
 
 export interface Size {
   width: number;
@@ -21,9 +23,19 @@ export interface Size {
  * Measure `node`, then draw a complete rule diagram (start terminus → node →
  * end terminus) into `backend`. Returns the overall canvas size. Pure geometry:
  * every visual comes out through backend primitives.
+ *
+ * When `wrapWidth` > 0 and the root is a `seq` wider than that budget (in the
+ * same pt units as the geometry), the sequence snakes across multiple rows
+ * instead of running off to the right — see {@link drawWrappedSeq}.
  */
-export function drawDiagram(node: DiagramNode, backend: DiagramBackend): Size {
+export function drawDiagram(node: DiagramNode, backend: DiagramBackend, wrapWidth = 0): Size {
   const box = layout(node);
+
+  if (wrapWidth > 0 && node.kind === "seq") {
+    const rows = packRows(node.children ?? [], wrapWidth);
+    if (rows.length > 1) return drawWrappedSeq(rows, backend);
+  }
+
   const railY = PAD + box.up;
   const height = PAD * 2 + box.up + box.down;
 
@@ -40,6 +52,116 @@ export function drawDiagram(node: DiagramNode, backend: DiagramBackend): Size {
   x += TERMINUS;
 
   return { width: x + PAD, height };
+}
+
+/**
+ * Greedily pack the top-level sequence's (already-measured) children into rows
+ * that each fit within `wrapWidth`. A child wider than the budget lands alone on
+ * its row and overflows it — we never break inside a child. Returns one row when
+ * everything fits (caller then draws the normal single-line diagram).
+ */
+function packRows(kids: DiagramNode[], wrapWidth: number): DiagramNode[][] {
+  const avail = wrapWidth - 2 * PAD;
+  const rows: DiagramNode[][] = [];
+  let cur: DiagramNode[] = [];
+  let curW = 0;
+  for (const k of kids) {
+    const w = k.box!.width;
+    if (cur.length > 0 && curW + H_SEQ + w > avail) {
+      rows.push(cur);
+      cur = [k];
+      curW = w;
+    } else {
+      curW += (cur.length > 0 ? H_SEQ : 0) + w;
+      cur.push(k);
+    }
+  }
+  if (cur.length > 0) rows.push(cur);
+  return rows;
+}
+
+/**
+ * Draw a snaked sequence: rows flow left→right, and at each row's end the rail
+ * turns down, sweeps back to the left margin, and drops into the next row (a
+ * "carriage return"). Only the first row's left and the last row's right carry a
+ * terminus; the rest are joined by connectors. Every content box stays natural
+ * size and reads in grammar order.
+ */
+function drawWrappedSeq(rows: DiagramNode[][], backend: DiagramBackend): Size {
+  const leftX = PAD; //          left spine: row-0 tick and every return drop
+  const contentX = PAD + TERMINUS; // where each row's boxes begin
+
+  // Measure each row from its children's boxes (endX = where its content stops).
+  const info = rows.map((kids) => {
+    let up = HALF;
+    let down = HALF;
+    let width = 0;
+    kids.forEach((k, i) => {
+      if (i > 0) width += H_SEQ;
+      width += k.box!.width;
+      up = Math.max(up, k.box!.up);
+      down = Math.max(down, k.box!.down);
+    });
+    return { kids, up, down, endX: contentX + width };
+  });
+
+  // A shared right spine mirrors the left margin: every row runs out to the same
+  // x (widest content + a terminus-width gap) before turning down or ending, so
+  // the right edge is a clean vertical instead of ragged per-row turns.
+  const rightX = Math.max(...info.map((r) => r.endX)) + TERMINUS;
+
+  // Stack the rows vertically, ROW_GAP between one row's bottom and the next's top.
+  const railY: number[] = [];
+  let bottom = PAD;
+  info.forEach((ri, i) => {
+    const top = i === 0 ? PAD : bottom + ROW_GAP;
+    railY[i] = top + ri.up;
+    bottom = railY[i] + ri.down;
+  });
+  const height = bottom + PAD;
+
+  info.forEach((ri, i) => {
+    const y = railY[i];
+    const first = i === 0;
+    const last = i === info.length - 1;
+
+    if (first) {
+      tick(backend, leftX, y); // start terminus on the left spine
+      backend.rail([p(leftX, y), p(contentX, y)]);
+    }
+    // Non-first rows: the previous row's connector already delivered the rail to contentX.
+
+    let x = contentX;
+    ri.kids.forEach((k, j) => {
+      if (j > 0) {
+        backend.rail([p(x, y), p(x + H_SEQ, y)]);
+        x += H_SEQ;
+      }
+      drawNode(k, x, y, backend);
+      x += k.box!.width;
+    });
+
+    if (last) {
+      backend.rail([p(x, y), p(rightX, y)]); // run out to the right spine
+      tick(backend, rightX, y); //             end terminus on the right spine
+    } else {
+      // Return connector: out to the right spine, down along the gap, left to the
+      // left spine, down into the next row, then a lead-in to contentX — one path
+      // so every corner rounds and both spines line up.
+      const yNext = railY[i + 1];
+      const yMid = (y + ri.down + (yNext - info[i + 1].up)) / 2;
+      backend.rail([
+        p(x, y),
+        p(rightX, y),
+        p(rightX, yMid),
+        p(leftX, yMid),
+        p(leftX, yNext),
+        p(contentX, yNext),
+      ]);
+    }
+  });
+
+  return { width: rightX + PAD, height };
 }
 
 const p = (x: number, y: number): Point => ({ x, y });

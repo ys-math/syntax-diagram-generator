@@ -114,7 +114,7 @@ optional greeting
 
 exports[`renderers — golden snapshots > matches the TikZ golden snapshot 1`] = `
 "expression
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% expression
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -123,6 +123,7 @@ exports[`renderers — golden snapshots > matches the TikZ golden snapshot 1`] =
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,105) -- (8,91);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,98) -- (20,98);
@@ -142,10 +143,11 @@ exports[`renderers — golden snapshots > matches the TikZ golden snapshot 1`] =
   \\fill[sdgLine] (39,63) -- (31,59) -- (39,55) -- cycle;
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (129.4,98) -- (141.4,98);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (141.4,105) -- (141.4,91);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 term
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% term
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -154,6 +156,7 @@ term
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,105) -- (8,91);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,98) -- (20,98);
@@ -173,10 +176,11 @@ term
   \\fill[sdgLine] (39,63) -- (31,59) -- (39,55) -- cycle;
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (129.4,98) -- (141.4,98);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (141.4,105) -- (141.4,91);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 factor
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% factor
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -185,6 +189,7 @@ factor
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,66) -- (8,52);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,59) -- (20,59);
@@ -205,10 +210,11 @@ factor
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (218.8,20) -- (228.8,20) -- (228.8,59) -- (238.8,59);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (238.8,59) -- (250.8,59);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (250.8,66) -- (250.8,52);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 number
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% number
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -217,6 +223,7 @@ number
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,47) -- (8,33);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,40) -- (20,40);
@@ -228,10 +235,11 @@ number
   \\fill[sdgLine] (73.5,17) -- (65.5,13) -- (73.5,9) -- cycle;
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (119,40) -- (131,40);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (131,47) -- (131,33);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 digit
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% digit
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -240,6 +248,7 @@ digit
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,378) -- (8,364);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,371) -- (20,371);
@@ -285,10 +294,11 @@ digit
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (79.4,20) -- (79.4,371) -- (89.4,371);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,371) -- (101.4,371);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101.4,378) -- (101.4,364);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 padded
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% padded
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -297,6 +307,7 @@ padded
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,52) -- (8,38);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,45) -- (20,45);
@@ -309,10 +320,11 @@ padded
   \\node[fill=white, inner sep=1pt, font=\\ttfamily\\footnotesize, text=sdgLabel] at (69.5,18) {3$\\times$};
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (119,45) -- (131,45);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (131,52) -- (131,38);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 letter
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% letter
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -321,6 +333,7 @@ letter
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,27) -- (8,13);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,20) -- (20,20);
@@ -328,10 +341,11 @@ letter
   \\node[font=\\ttfamily\\small] at (42.1,20) {A-Z};
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (64.2,20) -- (76.2,20);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (76.2,27) -- (76.2,13);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 consonant
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% consonant
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -340,6 +354,7 @@ consonant
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,27) -- (8,13);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,20) -- (20,20);
@@ -347,10 +362,11 @@ consonant
   \\node[font=\\ttfamily\\small] at (82.8,20) {letter $-$ vowel};
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (145.6,20) -- (157.6,20);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (157.6,27) -- (157.6,13);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 vowel
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% vowel
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -359,6 +375,7 @@ vowel
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,183) -- (8,169);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,176) -- (20,176);
@@ -384,10 +401,11 @@ vowel
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (79.4,20) -- (79.4,176) -- (89.4,176);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,176) -- (101.4,176);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101.4,183) -- (101.4,169);
-\\end{tikzpicture}
+\\end{tikzpicture}%
+}
 
 optional greeting
-% Requires \\usepackage{tikz} and \\usepackage{xcolor}
+% optional greeting
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -396,6 +414,7 @@ optional greeting
 \\definecolor{sdgExcFill}{RGB}{253,236,235}
 \\definecolor{sdgExcLine}{RGB}{176,65,58}
 \\definecolor{sdgLabel}{RGB}{106,118,134}
+\\adjustbox{max size={\\linewidth}{\\textheight}}{%
 \\begin{tikzpicture}[x=1pt, y=1pt]
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,27) -- (8,13);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,20) -- (20,20);
@@ -409,5 +428,6 @@ optional greeting
   \\node[font=\\ttfamily\\small] at (160.5,20) {world};
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (190,20) -- (202,20);
   \\draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (202,27) -- (202,13);
-\\end{tikzpicture}"
+\\end{tikzpicture}%
+}"
 `;

@@ -110,15 +110,25 @@ function colorDefs(): string {
     .join("\n");
 }
 
-/** Render a diagram node to a self-contained TikZ snippet (needs `tikz` + `xcolor`). */
-export function renderTikz(node: DiagramNode): string {
+/**
+ * Render a diagram node to a self-contained TikZ snippet.
+ *
+ * Requires `tikz`, `xcolor`, and `adjustbox`. The `tikzpicture` is wrapped in an
+ * `\adjustbox{max size=…}`: it scales down uniformly only if it exceeds the page
+ * width *or* height, so tall and wide diagrams both fit, while smaller ones keep
+ * their natural size. To pin a fixed frame, replace `\linewidth`/`\textheight`.
+ *
+ * `wrapWidth` (pt, 0 = off) snakes a wide top-level sequence across rows before
+ * scaling, trading horizontal overflow for readable, natural-size boxes.
+ */
+export function renderTikz(node: DiagramNode, wrapWidth = 0): string {
   const backend = new TikzBackend();
-  const { height } = drawDiagram(node, backend);
+  const { height } = drawDiagram(node, backend, wrapWidth);
   return (
-    "% Requires \\usepackage{tikz} and \\usepackage{xcolor}\n" +
     colorDefs() +
-    "\n\\begin{tikzpicture}[x=1pt, y=1pt]\n" +
+    "\n\\adjustbox{max size={\\linewidth}{\\textheight}}{%\n" +
+    "\\begin{tikzpicture}[x=1pt, y=1pt]\n" +
     backend.serialize(height) +
-    "\n\\end{tikzpicture}"
+    "\n\\end{tikzpicture}%\n}"
   );
 }
