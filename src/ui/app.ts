@@ -1,11 +1,13 @@
 import { ParseError, dialects } from "../parser";
-import { generate, type RuleDiagram } from "../pipeline";
+import { DEFAULT_OPTIONS, generate, type FitMode, type RuleDiagram } from "../pipeline";
 import { combineSvg } from "../render/combine";
 import { SAMPLE_GRAMMAR } from "./sample";
 
 const DEBOUNCE_MS = 250;
 const STORAGE_KEY = "sdg:grammar";
 const THEME_KEY = "sdg:theme";
+const MODE_KEY = "sdg:mode";
+const WIDTH_KEY = "sdg:wrapWidthCm";
 
 function $<T extends HTMLElement>(id: string): T {
   const el = document.getElementById(id);
@@ -21,6 +23,9 @@ export function initApp(): void {
   const diagramsEl = $<HTMLDivElement>("diagrams");
   const banner = $<HTMLDivElement>("error-banner");
   const errorText = $<HTMLSpanElement>("error-text");
+  const modeSel = $<HTMLSelectElement>("fit-mode");
+  const widthField = $<HTMLLabelElement>("wrap-width-field");
+  const widthInput = $<HTMLInputElement>("wrap-width");
 
   // Dialect dropdown from the registry (EBNF-only today, more later).
   for (const d of dialects) {
@@ -35,10 +40,24 @@ export function initApp(): void {
 
   grammarEl.value = localStorage.getItem(STORAGE_KEY) ?? SAMPLE_GRAMMAR;
 
+  // Restore persisted fit settings; the cm field only matters (and only shows) in wrap mode.
+  modeSel.value = localStorage.getItem(MODE_KEY) ?? DEFAULT_OPTIONS.mode;
+  widthInput.value = localStorage.getItem(WIDTH_KEY) ?? String(DEFAULT_OPTIONS.wrapWidthCm);
+  const syncWidthField = () => {
+    widthField.hidden = modeSel.value !== "wrap";
+  };
+  syncWidthField();
+
   const run = () => {
     localStorage.setItem(STORAGE_KEY, grammarEl.value);
+    localStorage.setItem(MODE_KEY, modeSel.value);
+    localStorage.setItem(WIDTH_KEY, widthInput.value);
     try {
-      const rules = generate(grammarEl.value, dialectSel.value);
+      const wrapWidthCm = Number(widthInput.value) || DEFAULT_OPTIONS.wrapWidthCm;
+      const rules = generate(grammarEl.value, dialectSel.value, {
+        mode: modeSel.value as FitMode,
+        wrapWidthCm,
+      });
       lastGood = rules;
       hideError(banner);
       renderRules(diagramsEl, rules);
@@ -60,6 +79,11 @@ export function initApp(): void {
 
   grammarEl.addEventListener("input", schedule);
   dialectSel.addEventListener("change", run);
+  modeSel.addEventListener("change", () => {
+    syncWidthField();
+    run();
+  });
+  widthInput.addEventListener("input", schedule);
   $("error-dismiss").addEventListener("click", () => hideError(banner));
   $("sample-btn").addEventListener("click", () => {
     grammarEl.value = SAMPLE_GRAMMAR;
@@ -72,7 +96,7 @@ export function initApp(): void {
   });
   $("copy-all-tikz").addEventListener("click", async () => {
     if (lastGood.length === 0) return;
-    const all = lastGood.map((r) => `% ${r.name}\n${r.tikz}`).join("\n\n");
+    const all = lastGood.map((r) => r.tikz).join("\n\n");
     await copy(all, "All TikZ copied");
   });
 

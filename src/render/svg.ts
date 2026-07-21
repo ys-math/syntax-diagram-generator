@@ -78,10 +78,13 @@ const STYLE = `
 .count { fill: #6a7686; font-family: 'SFMono-Regular','Consolas',monospace; font-size: 11px; text-anchor: middle; dominant-baseline: central; }
 `.trim();
 
-/** Render a measured-or-unmeasured diagram node to a self-contained SVG string. */
-export function renderSvg(node: DiagramNode): string {
+/**
+ * Render a diagram node to a self-contained SVG string. `wrapWidth` (pt, 0 = off)
+ * snakes a wide top-level sequence across rows so the preview matches wrapped TikZ.
+ */
+export function renderSvg(node: DiagramNode, wrapWidth = 0): string {
   const backend = new SvgBackend();
-  const { width, height } = drawDiagram(node, backend);
+  const { width, height } = drawDiagram(node, backend, wrapWidth);
   return (
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${num(width)} ${num(height)}" ` +
     `width="${num(width)}" height="${num(height)}" role="img">` +
