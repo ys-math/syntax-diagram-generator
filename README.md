@@ -9,6 +9,26 @@ The parser, layout engine, and both renderers are written from scratch (no
 third-party railroad library), around a single measured diagram tree that every
 output backend consumes.
 
+## Examples
+
+Each of these is the actual SVG output for a single rule (regenerate them with
+`npx vite-node scripts/gen-samples.ts`).
+
+`expression = term, { ("+" | "-"), term };` — concatenation with a repeated,
+alternating separator:
+
+![expression diagram](docs/images/expression.svg)
+
+`factor = number | "(", expression, ")";` — alternation between a reference and a
+parenthesised sub-expression:
+
+![factor diagram](docs/images/factor.svg)
+
+`signed number = [ "+" | "-" ], digit, { digit };` — an optional leading sign
+followed by one-or-more digits:
+
+![signed number diagram](docs/images/signed-number.svg)
+
 ## Features
 
 - **EBNF → diagrams** following **ISO/IEC 14977**, including the tricky bits:
