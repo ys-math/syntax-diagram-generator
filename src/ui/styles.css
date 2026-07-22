@@ -127,8 +127,23 @@ button {
 .workspace {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(280px, 34%) 1fr;
+  /* --editor-w is set (in px) by the drag handle; falls back to the default split. */
+  grid-template-columns: var(--editor-w, minmax(280px, 34%)) 6px 1fr;
   min-height: 0;
+}
+
+.resizer {
+  cursor: col-resize;
+  background: var(--border);
+  transition: background 0.12s;
+  touch-action: none;
+}
+
+.resizer:hover,
+.resizer:focus-visible,
+.resizer.dragging {
+  background: var(--accent);
+  outline: none;
 }
 
 .pane {
@@ -205,8 +220,13 @@ textarea {
   color: var(--text);
   outline: none;
   tab-size: 2;
-  white-space: pre;
-  overflow: auto;
+  /* Wrap long lines so nothing scrolls off-screen; the gutter measures the
+     wrapped heights to keep line numbers aligned (see app.ts updateGutter). */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable; /* keep wrap width constant when the scrollbar toggles */
 }
 
 .error-banner {
@@ -335,5 +355,9 @@ textarea {
   .editor-pane {
     border-right: 0;
     border-bottom: 1px solid var(--border);
+  }
+  /* Stacked layout has no horizontal split to drag. */
+  .resizer {
+    display: none;
   }
 }

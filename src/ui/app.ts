@@ -8,6 +8,7 @@ const STORAGE_KEY = "sdg:grammar";
 const THEME_KEY = "sdg:theme";
 const MODE_KEY = "sdg:mode";
 const WIDTH_KEY = "sdg:wrapWidthCm";
+const EDITOR_WIDTH_KEY = "sdg:editorWidth";
 
 function $<T extends HTMLElement>(id: string): T {
   const el = document.getElementById(id);
@@ -38,23 +39,63 @@ export function initApp(): void {
 
   initTheme();
   $("theme-toggle").addEventListener("click", toggleTheme);
+  initResizer();
 
   grammarEl.value = localStorage.getItem(STORAGE_KEY) ?? SAMPLE_GRAMMAR;
 
-  // VSCode-style line-number gutter, kept in sync with the textarea's content and scroll.
-  let lineCount = 0;
+  // VSCode-style line-number gutter, kept in sync with the textarea's content and
+  // scroll. Because the textarea wraps, one logical line can occupy several visual
+  // rows; an off-screen mirror measures each line's wrapped height so the numbers
+  // stay aligned (blank continuation rows fill the extra height).
+  const mirror = document.createElement("div");
+  mirror.setAttribute("aria-hidden", "true");
+  Object.assign(mirror.style, {
+    position: "absolute",
+    top: "0",
+    left: "-9999px",
+    visibility: "hidden",
+    height: "auto",
+    boxSizing: "border-box",
+    whiteSpace: "pre-wrap",
+    overflowWrap: "break-word",
+  } satisfies Partial<CSSStyleDeclaration>);
+  document.body.append(mirror);
+
   const updateGutter = () => {
-    const n = grammarEl.value.split("\n").length;
-    if (n === lineCount) return;
-    lineCount = n;
+    const lines = grammarEl.value.split("\n");
+    const cs = getComputedStyle(grammarEl);
+    // Match the textarea's text box so the mirror wraps at the same column.
+    mirror.style.font = cs.font;
+    mirror.style.lineHeight = cs.lineHeight;
+    mirror.style.letterSpacing = cs.letterSpacing;
+    mirror.style.tabSize = cs.tabSize;
+    mirror.style.paddingLeft = cs.paddingLeft;
+    mirror.style.paddingRight = cs.paddingRight;
+    mirror.style.width = `${grammarEl.clientWidth}px`;
+
+    mirror.replaceChildren();
+    const lineEls = lines.map((ln) => {
+      const d = document.createElement("div");
+      d.textContent = ln.length ? ln : " "; // an empty line is still one row
+      mirror.append(d);
+      return d;
+    });
+
+    const lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.55;
     let s = "";
-    for (let i = 1; i <= n; i++) s += `${i}\n`;
+    for (let i = 0; i < lines.length; i++) {
+      const wrapped = Math.max(1, Math.round(lineEls[i].offsetHeight / lh));
+      s += `${i + 1}\n${"\n".repeat(wrapped - 1)}`;
+    }
     gutterEl.textContent = s;
   };
   grammarEl.addEventListener("input", updateGutter);
   grammarEl.addEventListener("scroll", () => {
     gutterEl.scrollTop = grammarEl.scrollTop;
   });
+  // Re-measure when the pane is resized (splitter drag, window resize): the wrap
+  // column changes even though the text does not.
+  new ResizeObserver(() => updateGutter()).observe(grammarEl);
   updateGutter();
 
   // Restore persisted fit settings; the cm field only matters (and only shows) in wrap mode.
@@ -233,6 +274,70 @@ function toast(message: string): void {
   toastEl.classList.add("show");
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => toastEl?.classList.remove("show"), 1400);
+}
+
+// Draggable vertical split between the editor and diagrams panes. The chosen
+// width is stored (in px) as the grid's first column via --editor-w.
+function initResizer(): void {
+  const workspace = document.querySelector<HTMLElement>(".workspace");
+  const resizer = $<HTMLDivElement>("resizer");
+  if (!workspace) return;
+
+  const MIN_EDITOR = 240; // px; also leaves room for the output pane
+  const MIN_OUTPUT = 320;
+
+  const clamp = (px: number): number => {
+    const max = workspace.clientWidth - MIN_OUTPUT;
+    return Math.max(MIN_EDITOR, Math.min(px, Math.max(MIN_EDITOR, max)));
+  };
+  const apply = (px: number): void => {
+    workspace.style.setProperty("--editor-w", `${px}px`);
+  };
+  const persist = (): void => {
+    const w = workspace.style.getPropertyValue("--editor-w");
+    if (w) localStorage.setItem(EDITOR_WIDTH_KEY, w);
+  };
+  const currentWidth = (): number =>
+    parseFloat(workspace.style.getPropertyValue("--editor-w")) ||
+    (workspace.querySelector<HTMLElement>(".editor-pane")?.clientWidth ?? MIN_EDITOR);
+
+  const saved = localStorage.getItem(EDITOR_WIDTH_KEY);
+  if (saved) apply(clamp(parseFloat(saved)));
+
+  let dragging = false;
+  resizer.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    resizer.classList.add("dragging");
+    resizer.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  resizer.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    apply(clamp(e.clientX - workspace.getBoundingClientRect().left));
+  });
+  const endDrag = (e: PointerEvent) => {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove("dragging");
+    resizer.releasePointerCapture(e.pointerId);
+    persist();
+  };
+  resizer.addEventListener("pointerup", endDrag);
+  resizer.addEventListener("pointercancel", endDrag);
+
+  // Keyboard resize + double-click to reset the split.
+  resizer.addEventListener("keydown", (e) => {
+    const step = e.shiftKey ? 40 : 12;
+    if (e.key === "ArrowLeft") apply(clamp(currentWidth() - step));
+    else if (e.key === "ArrowRight") apply(clamp(currentWidth() + step));
+    else return;
+    e.preventDefault();
+    persist();
+  });
+  resizer.addEventListener("dblclick", () => {
+    workspace.style.removeProperty("--editor-w");
+    localStorage.removeItem(EDITOR_WIDTH_KEY);
+  });
 }
 
 function initTheme(): void {
