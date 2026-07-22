@@ -455,6 +455,13 @@ special sequence = "?", { character }, "?";
 identifier = letter, { letter | digit | " " };
 
 integer = digit, { digit };
+
+letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r"
+       | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+       | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I"
+       | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R"
+       | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z";
 \end{verbatim}
 
 \paragraph{grammar}\mbox{}\\[2pt]
@@ -897,6 +904,233 @@ integer = digit, { digit };
   \fill[sdgLine] (73.5,17) -- (65.5,13) -- (73.5,9) -- cycle;
   \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (119,40) -- (131,40);
   \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (131,47) -- (131,33);
+\end{tikzpicture}%
+}
+
+\paragraph{letter}\mbox{}\\[2pt]
+% letter
+\definecolor{sdgLine}{RGB}{57,70,86}
+\definecolor{sdgTermFill}{RGB}{238,243,251}
+\definecolor{sdgTermLine}{RGB}{58,103,168}
+\definecolor{sdgSpecFill}{RGB}{255,246,230}
+\definecolor{sdgSpecLine}{RGB}{184,134,11}
+\definecolor{sdgExcFill}{RGB}{253,236,235}
+\definecolor{sdgExcLine}{RGB}{176,65,58}
+\definecolor{sdgLabel}{RGB}{106,118,134}
+\adjustbox{max size={\linewidth}{\textheight}}{%
+\begin{tikzpicture}[x=1pt, y=1pt]
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,2016) -- (8,2002);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (8,2009) -- (20,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (40,2009);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1997) rectangle (69.4,2021);
+  \node[font=\ttfamily\small] at (54.7,2009) {a};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1970) -- (40,1970);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1958) rectangle (69.4,1982);
+  \node[font=\ttfamily\small] at (54.7,1970) {b};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1970) -- (79.4,1970) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1931) -- (40,1931);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1919) rectangle (69.4,1943);
+  \node[font=\ttfamily\small] at (54.7,1931) {c};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1931) -- (79.4,1931) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1892) -- (40,1892);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1880) rectangle (69.4,1904);
+  \node[font=\ttfamily\small] at (54.7,1892) {d};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1892) -- (79.4,1892) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1853) -- (40,1853);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1841) rectangle (69.4,1865);
+  \node[font=\ttfamily\small] at (54.7,1853) {e};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1853) -- (79.4,1853) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1814) -- (40,1814);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1802) rectangle (69.4,1826);
+  \node[font=\ttfamily\small] at (54.7,1814) {f};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1814) -- (79.4,1814) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1775) -- (40,1775);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1763) rectangle (69.4,1787);
+  \node[font=\ttfamily\small] at (54.7,1775) {g};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1775) -- (79.4,1775) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1736) -- (40,1736);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1724) rectangle (69.4,1748);
+  \node[font=\ttfamily\small] at (54.7,1736) {h};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1736) -- (79.4,1736) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1697) -- (40,1697);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1685) rectangle (69.4,1709);
+  \node[font=\ttfamily\small] at (54.7,1697) {i};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1697) -- (79.4,1697) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1658) -- (40,1658);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1646) rectangle (69.4,1670);
+  \node[font=\ttfamily\small] at (54.7,1658) {j};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1658) -- (79.4,1658) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1619) -- (40,1619);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1607) rectangle (69.4,1631);
+  \node[font=\ttfamily\small] at (54.7,1619) {k};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1619) -- (79.4,1619) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1580) -- (40,1580);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1568) rectangle (69.4,1592);
+  \node[font=\ttfamily\small] at (54.7,1580) {l};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1580) -- (79.4,1580) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1541) -- (40,1541);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1529) rectangle (69.4,1553);
+  \node[font=\ttfamily\small] at (54.7,1541) {m};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1541) -- (79.4,1541) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1502) -- (40,1502);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1490) rectangle (69.4,1514);
+  \node[font=\ttfamily\small] at (54.7,1502) {n};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1502) -- (79.4,1502) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1463) -- (40,1463);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1451) rectangle (69.4,1475);
+  \node[font=\ttfamily\small] at (54.7,1463) {o};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1463) -- (79.4,1463) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1424) -- (40,1424);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1412) rectangle (69.4,1436);
+  \node[font=\ttfamily\small] at (54.7,1424) {p};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1424) -- (79.4,1424) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1385) -- (40,1385);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1373) rectangle (69.4,1397);
+  \node[font=\ttfamily\small] at (54.7,1385) {q};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1385) -- (79.4,1385) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1346) -- (40,1346);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1334) rectangle (69.4,1358);
+  \node[font=\ttfamily\small] at (54.7,1346) {r};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1346) -- (79.4,1346) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1307) -- (40,1307);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1295) rectangle (69.4,1319);
+  \node[font=\ttfamily\small] at (54.7,1307) {s};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1307) -- (79.4,1307) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1268) -- (40,1268);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1256) rectangle (69.4,1280);
+  \node[font=\ttfamily\small] at (54.7,1268) {t};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1268) -- (79.4,1268) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1229) -- (40,1229);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1217) rectangle (69.4,1241);
+  \node[font=\ttfamily\small] at (54.7,1229) {u};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1229) -- (79.4,1229) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1190) -- (40,1190);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1178) rectangle (69.4,1202);
+  \node[font=\ttfamily\small] at (54.7,1190) {v};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1190) -- (79.4,1190) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1151) -- (40,1151);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1139) rectangle (69.4,1163);
+  \node[font=\ttfamily\small] at (54.7,1151) {w};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1151) -- (79.4,1151) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1112) -- (40,1112);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1100) rectangle (69.4,1124);
+  \node[font=\ttfamily\small] at (54.7,1112) {x};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1112) -- (79.4,1112) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1073) -- (40,1073);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1061) rectangle (69.4,1085);
+  \node[font=\ttfamily\small] at (54.7,1073) {y};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1073) -- (79.4,1073) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,1034) -- (40,1034);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,1022) rectangle (69.4,1046);
+  \node[font=\ttfamily\small] at (54.7,1034) {z};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,1034) -- (79.4,1034) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,995) -- (40,995);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,983) rectangle (69.4,1007);
+  \node[font=\ttfamily\small] at (54.7,995) {A};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,995) -- (79.4,995) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,956) -- (40,956);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,944) rectangle (69.4,968);
+  \node[font=\ttfamily\small] at (54.7,956) {B};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,956) -- (79.4,956) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,917) -- (40,917);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,905) rectangle (69.4,929);
+  \node[font=\ttfamily\small] at (54.7,917) {C};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,917) -- (79.4,917) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,878) -- (40,878);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,866) rectangle (69.4,890);
+  \node[font=\ttfamily\small] at (54.7,878) {D};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,878) -- (79.4,878) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,839) -- (40,839);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,827) rectangle (69.4,851);
+  \node[font=\ttfamily\small] at (54.7,839) {E};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,839) -- (79.4,839) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,800) -- (40,800);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,788) rectangle (69.4,812);
+  \node[font=\ttfamily\small] at (54.7,800) {F};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,800) -- (79.4,800) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,761) -- (40,761);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,749) rectangle (69.4,773);
+  \node[font=\ttfamily\small] at (54.7,761) {G};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,761) -- (79.4,761) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,722) -- (40,722);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,710) rectangle (69.4,734);
+  \node[font=\ttfamily\small] at (54.7,722) {H};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,722) -- (79.4,722) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,683) -- (40,683);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,671) rectangle (69.4,695);
+  \node[font=\ttfamily\small] at (54.7,683) {I};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,683) -- (79.4,683) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,644) -- (40,644);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,632) rectangle (69.4,656);
+  \node[font=\ttfamily\small] at (54.7,644) {J};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,644) -- (79.4,644) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,605) -- (40,605);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,593) rectangle (69.4,617);
+  \node[font=\ttfamily\small] at (54.7,605) {K};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,605) -- (79.4,605) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,566) -- (40,566);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,554) rectangle (69.4,578);
+  \node[font=\ttfamily\small] at (54.7,566) {L};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,566) -- (79.4,566) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,527) -- (40,527);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,515) rectangle (69.4,539);
+  \node[font=\ttfamily\small] at (54.7,527) {M};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,527) -- (79.4,527) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,488) -- (40,488);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,476) rectangle (69.4,500);
+  \node[font=\ttfamily\small] at (54.7,488) {N};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,488) -- (79.4,488) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,449) -- (40,449);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,437) rectangle (69.4,461);
+  \node[font=\ttfamily\small] at (54.7,449) {O};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,449) -- (79.4,449) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,410) -- (40,410);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,398) rectangle (69.4,422);
+  \node[font=\ttfamily\small] at (54.7,410) {P};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,410) -- (79.4,410) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,371) -- (40,371);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,359) rectangle (69.4,383);
+  \node[font=\ttfamily\small] at (54.7,371) {Q};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,371) -- (79.4,371) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,332) -- (40,332);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,320) rectangle (69.4,344);
+  \node[font=\ttfamily\small] at (54.7,332) {R};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,332) -- (79.4,332) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,293) -- (40,293);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,281) rectangle (69.4,305);
+  \node[font=\ttfamily\small] at (54.7,293) {S};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,293) -- (79.4,293) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,254) -- (40,254);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,242) rectangle (69.4,266);
+  \node[font=\ttfamily\small] at (54.7,254) {T};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,254) -- (79.4,254) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,215) -- (40,215);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,203) rectangle (69.4,227);
+  \node[font=\ttfamily\small] at (54.7,215) {U};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,215) -- (79.4,215) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,176) -- (40,176);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,164) rectangle (69.4,188);
+  \node[font=\ttfamily\small] at (54.7,176) {V};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,176) -- (79.4,176) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,137) -- (40,137);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,125) rectangle (69.4,149);
+  \node[font=\ttfamily\small] at (54.7,137) {W};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,137) -- (79.4,137) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,98) -- (40,98);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,86) rectangle (69.4,110);
+  \node[font=\ttfamily\small] at (54.7,98) {X};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,98) -- (79.4,98) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,59) -- (40,59);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,47) rectangle (69.4,71);
+  \node[font=\ttfamily\small] at (54.7,59) {Y};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,59) -- (79.4,59) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (20,2009) -- (30,2009) -- (30,20) -- (40,20);
+  \draw[line width=1.2pt, draw=sdgTermLine, fill=sdgTermFill, rounded corners=12pt] (40,8) rectangle (69.4,32);
+  \node[font=\ttfamily\small] at (54.7,20) {Z};
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (69.4,20) -- (79.4,20) -- (79.4,2009) -- (89.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (89.4,2009) -- (101.4,2009);
+  \draw[line width=1.2pt, draw=sdgLine, rounded corners=10pt] (101.4,2016) -- (101.4,2002);
 \end{tikzpicture}%
 }
 
