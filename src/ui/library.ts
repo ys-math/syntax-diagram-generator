@@ -15,47 +15,15 @@ const LIBRARY_KEY = "sdg:library";
 const SORT_KEY = "sdg:librarySort";
 
 /**
- * Grammars seeded as ordinary (deletable) entries on first run only. These are
- * the same examples that populate the printable LaTeX reference
- * (`scripts/gen-samples-tex.ts`) — one per notable EBNF construct — plus the
- * arithmetic sample. All share `savedAt: 0`; the stable sort preserves this
- * curated order in the "Recent" view.
+ * Grammars seeded as ordinary (deletable) entries on first run only: a small
+ * arithmetic sample and EBNF's own grammar written in EBNF. Both share
+ * `savedAt: 0`; the stable sort preserves this order in the "Recent" view.
  */
 const SEED_LIBRARY: SavedGrammar[] = [
   {
     title: "Sample — Arithmetic (EBNF)",
     description: "A small arithmetic expression grammar showing off most EBNF constructs.",
     grammar: SAMPLE_GRAMMAR,
-  },
-  {
-    title: "Concatenation with a repeated separator",
-    description: "A term followed by { } repetition of a separated group.",
-    grammar: `expression = term, { ("+" | "-"), term };`,
-  },
-  {
-    title: "Alternation and grouping",
-    description: "Alternation | combined with a grouped ( ) sequence.",
-    grammar: `factor = number | "(", expression, ")";`,
-  },
-  {
-    title: "Optional and one-or-more",
-    description: "An optional [ ] prefix ahead of a one-or-more repetition.",
-    grammar: `signed number = [ "+" | "-" ], digit, { digit };`,
-  },
-  {
-    title: "Repetition factor",
-    description: "A fixed repetition count (n * item).",
-    grammar: `triplet = 3 * digit;`,
-  },
-  {
-    title: "Special sequence",
-    description: "A ? special sequence ? placeholder for implementation-defined text.",
-    grammar: `token = ? implementation-defined ? ;`,
-  },
-  {
-    title: "Exception",
-    description: "A restriction written with the exception (-) operator.",
-    grammar: `consonant = letter - vowel ;`,
   },
   {
     title: "EBNF described in EBNF",
