@@ -1,5 +1,5 @@
 import { buildRuleDiagram } from "./model/builder";
-import { getDialect } from "./parser";
+import { parseEbnf } from "./parser";
 import { renderSvg } from "./render/svg";
 import { renderTikz } from "./render/tikz";
 
@@ -27,24 +27,28 @@ export interface RuleDiagram {
 }
 
 /**
- * Full pipeline: parse `input` with the chosen dialect, then render each rule to
- * SVG and TikZ. Throws {@link ParseError} on invalid input — callers keep the
- * previous good result and surface the error.
+ * Full pipeline: parse `input` as EBNF, then render each rule to SVG and TikZ.
+ * Throws {@link ParseError} on invalid input — callers keep the previous good
+ * result and surface the error.
  */
 export function generate(
   input: string,
-  dialectId: string,
   options: RenderOptions = DEFAULT_OPTIONS,
 ): RuleDiagram[] {
   const wrapWidth = options.mode === "wrap" ? options.wrapWidthCm * PT_PER_CM : 0;
-  const grammar = getDialect(dialectId).parse(input);
+  const grammar = parseEbnf(input);
   return grammar.rules.map((rule) => {
     const node = buildRuleDiagram(rule);
+    // Prefix the snippet with the rule's original EBNF as a comment, so the
+    // pasted TikZ carries its source grammar alongside the diagram.
+    const comment = rule.source
+      .split("\n")
+      .map((line) => `% ${line}`)
+      .join("\n");
     return {
       name: rule.name,
       svg: renderSvg(node, wrapWidth),
-      // The rule name is the snippet's only comment (labels it once pasted into LaTeX).
-      tikz: `% ${rule.name}\n${renderTikz(node, wrapWidth)}`,
+      tikz: `${comment}\n${renderTikz(node, wrapWidth)}`,
     };
   });
 }

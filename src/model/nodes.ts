@@ -1,6 +1,6 @@
 /**
- * The diagram tree: a dialect-neutral, layout-oriented representation that sits
- * between the grammar AST and the renderers. Every renderer (SVG, TikZ, …)
+ * The diagram tree: a layout-oriented representation that sits between the
+ * grammar AST and the renderers. Every renderer (SVG, TikZ, …)
  * consumes this same tree after {@link layout} annotates each node with a `box`.
  */
 

@@ -37,9 +37,11 @@ const PRIMARY_START: ReadonlySet<TokenType> = new Set<TokenType>([
 class Parser {
   private tokens: Token[];
   private pos = 0;
+  private input: string;
 
-  constructor(tokens: Token[]) {
+  constructor(tokens: Token[], input: string) {
     this.tokens = tokens;
+    this.input = input;
   }
 
   private peek(): Token {
@@ -78,8 +80,9 @@ class Parser {
     const name = this.expect("identifier", "a rule name");
     this.expect("def", "`=` after the rule name");
     const expr = this.parseDefinitionsList();
-    this.expect("semicolon", "`;` to end the rule");
-    return { name: name.value, expr, line: name.line };
+    const end = this.expect("semicolon", "`;` to end the rule");
+    const source = this.input.slice(name.offset, end.offset + end.value.length);
+    return { name: name.value, expr, line: name.line, source };
   }
 
   /** definitions list = single definition, { '|', single definition } */
@@ -187,5 +190,5 @@ class Parser {
 
 /** Parse ISO/IEC 14977 EBNF source into a {@link Grammar}. Throws {@link ParseError}. */
 export function parseEbnf(input: string): Grammar {
-  return new Parser(tokenize(input)).parseGrammar();
+  return new Parser(tokenize(input), input).parseGrammar();
 }

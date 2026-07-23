@@ -180,6 +180,139 @@ button {
   gap: 8px;
 }
 
+/* Saved-grammar library: Save button + "Saved ▾" popover in the editor head. */
+.library-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.library-menu {
+  position: relative;
+}
+
+.library-popover {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 20;
+  width: 280px;
+  max-width: 80vw;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.library-popover[hidden] {
+  display: none;
+}
+
+.library-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.library-sort {
+  display: flex;
+  gap: 2px;
+}
+
+.sort-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.sort-tab:hover {
+  color: var(--text);
+}
+
+.sort-tab.active {
+  background: var(--panel-2);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.library-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.library-item {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  border-radius: 7px;
+}
+
+.library-item:hover {
+  background: var(--panel-2);
+}
+
+.library-load {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 7px 8px;
+  color: var(--text);
+}
+
+.library-item-title {
+  font-size: 13px;
+  font-weight: 550;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.library-item-desc {
+  font-size: 11.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.library-delete {
+  flex: 0 0 auto;
+  align-self: center;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.library-delete:hover {
+  color: var(--error-text);
+  background: var(--error-bg);
+}
+
+.library-empty {
+  padding: 14px 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
 /* Shared editor metrics so the gutter and textarea line up exactly. */
 .editor {
   --editor-font: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
@@ -345,6 +478,91 @@ textarea {
 
 .toast.show {
   opacity: 0.95;
+}
+
+/* Save-grammar modal (native <dialog>). */
+.modal {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0;
+  width: min(440px, 92vw);
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 20px 20px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.modal-field em {
+  font-style: normal;
+  opacity: 0.75;
+}
+
+.modal-field input,
+.modal-field textarea {
+  font: inherit;
+  font-size: 13.5px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  resize: vertical;
+}
+
+.modal-field input:focus,
+.modal-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.modal-hint {
+  margin: -4px 0 0;
+  font-size: 12px;
+  color: var(--error-text);
+}
+
+.modal-hint[hidden] {
+  display: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ghost.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.ghost.primary:hover {
+  filter: brightness(1.05);
 }
 
 @media (max-width: 760px) {

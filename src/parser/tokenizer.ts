@@ -25,6 +25,8 @@ export interface Token {
   value: string;
   line: number; // 1-based
   col: number; // 1-based
+  /** 0-based absolute index of the token's first character in the source. */
+  offset: number;
 }
 
 const LETTER = /[A-Za-z]/;
@@ -57,8 +59,10 @@ export function tokenize(input: string): Token[] {
     return ch;
   };
 
+  let tokenStart = 0; // absolute index where the current token began
+
   const push = (type: TokenType, value: string, l: number, c: number) => {
-    tokens.push({ type, value, line: l, col: c });
+    tokens.push({ type, value, line: l, col: c, offset: tokenStart });
   };
 
   while (pos < input.length) {
@@ -72,6 +76,7 @@ export function tokenize(input: string): Token[] {
 
     const startLine = line;
     const startCol = col;
+    tokenStart = pos;
 
     // Comment: (* … *)  (may be unterminated → error)
     if (ch === "(" && peek(1) === "*") {
@@ -202,6 +207,7 @@ export function tokenize(input: string): Token[] {
     throw new ParseError(startLine, startCol, "a valid EBNF token", `\`${ch}\``);
   }
 
+  tokenStart = pos;
   push("eof", "", line, col);
   return tokens;
 }

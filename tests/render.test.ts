@@ -20,7 +20,7 @@ optional greeting = ["hello"], "world";
 `.trim();
 
 describe("renderers — golden snapshots", () => {
-  const rules = generate(GRAMMAR, "ebnf");
+  const rules = generate(GRAMMAR);
 
   it("produces one diagram per rule", () => {
     expect(rules.map((r) => r.name)).toEqual([
@@ -68,30 +68,30 @@ describe("wrap mode — snaking wide sequences", () => {
   const LONG = `long = a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p;`;
 
   it("narrows and heightens a wide sequence versus shrink mode", () => {
-    const [flat] = generate(LONG, "ebnf", { mode: "shrink", wrapWidthCm: 12.7 });
-    const [snaked] = generate(LONG, "ebnf", { mode: "wrap", wrapWidthCm: 6 });
+    const [flat] = generate(LONG, { mode: "shrink", wrapWidthCm: 12.7 });
+    const [snaked] = generate(LONG, { mode: "wrap", wrapWidthCm: 6 });
     expect(svgDim(snaked.svg, "width")).toBeLessThan(svgDim(flat.svg, "width"));
     expect(svgDim(snaked.svg, "height")).toBeGreaterThan(svgDim(flat.svg, "height"));
   });
 
   it("keeps the snaked width within a small margin of the wrap budget", () => {
     const wrapWidthCm = 6;
-    const [snaked] = generate(LONG, "ebnf", { mode: "wrap", wrapWidthCm });
+    const [snaked] = generate(LONG, { mode: "wrap", wrapWidthCm });
     const budgetPt = (wrapWidthCm * 72.27) / 2.54;
     // Rows never start a new item past the budget; allow one item's overshoot.
     expect(svgDim(snaked.svg, "width")).toBeLessThan(budgetPt * 1.6);
   });
 
   it("does not wrap when the sequence already fits the budget", () => {
-    const [flat] = generate(LONG, "ebnf", { mode: "shrink", wrapWidthCm: 12.7 });
-    const [wide] = generate(LONG, "ebnf", { mode: "wrap", wrapWidthCm: 100 });
+    const [flat] = generate(LONG, { mode: "shrink", wrapWidthCm: 12.7 });
+    const [wide] = generate(LONG, { mode: "wrap", wrapWidthCm: 100 });
     expect(wide.svg).toBe(flat.svg);
   });
 
   it("leaves a non-sequence rule (tall choice) single-line under wrap mode", () => {
     const grammar = `digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";`;
-    const [a] = generate(grammar, "ebnf", { mode: "shrink", wrapWidthCm: 12.7 });
-    const [b] = generate(grammar, "ebnf", { mode: "wrap", wrapWidthCm: 2 });
+    const [a] = generate(grammar, { mode: "shrink", wrapWidthCm: 12.7 });
+    const [b] = generate(grammar, { mode: "wrap", wrapWidthCm: 2 });
     // No top-level seq to break — geometry is identical; adjustbox scales it in LaTeX.
     expect(b.svg).toBe(a.svg);
   });

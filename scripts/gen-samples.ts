@@ -51,7 +51,7 @@ const samples: Array<{ file: string; rule: string; grammar: string }> = [
 ];
 
 for (const { file, rule, grammar } of samples) {
-  const diagram = generate(grammar, "ebnf").find((d) => d.name === rule);
+  const diagram = generate(grammar).find((d) => d.name === rule);
   if (!diagram) throw new Error(`rule not found: ${rule}`);
   writeFileSync(resolve(outDir, `${file}.svg`), onWhiteCard(diagram.svg) + "\n");
   console.log(`wrote docs/images/${file}.svg`);

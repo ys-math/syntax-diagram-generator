@@ -126,7 +126,7 @@ const parts: string[] = [
 ];
 
 for (const { title, grammar } of examples) {
-  const diagrams = generate(grammar, "ebnf");
+  const diagrams = generate(grammar);
   parts.push(`\\section{${latexText(title)}}`);
   parts.push("\\begin{verbatim}");
   parts.push(grammar.trim());

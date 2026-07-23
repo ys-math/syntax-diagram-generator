@@ -1,6 +1,17 @@
-import { ParseError, dialects } from "../parser";
+import { ParseError } from "../parser";
 import { DEFAULT_OPTIONS, generate, type FitMode, type RuleDiagram } from "../pipeline";
 import { combineSvg } from "../render/combine";
+import {
+  findByTitle,
+  loadLibrary,
+  loadSort,
+  removeGrammar,
+  saveSort,
+  sortLibrary,
+  upsertGrammar,
+  type LibrarySort,
+  type SavedGrammar,
+} from "./library";
 import { SAMPLE_GRAMMAR } from "./sample";
 
 const DEBOUNCE_MS = 250;
@@ -19,7 +30,6 @@ function $<T extends HTMLElement>(id: string): T {
 let lastGood: RuleDiagram[] = [];
 
 export function initApp(): void {
-  const dialectSel = $<HTMLSelectElement>("dialect");
   const grammarEl = $<HTMLTextAreaElement>("grammar");
   const gutterEl = $<HTMLDivElement>("gutter");
   const diagramsEl = $<HTMLDivElement>("diagrams");
@@ -28,14 +38,6 @@ export function initApp(): void {
   const modeSel = $<HTMLSelectElement>("fit-mode");
   const widthField = $<HTMLLabelElement>("wrap-width-field");
   const widthInput = $<HTMLInputElement>("wrap-width");
-
-  // Dialect dropdown from the registry (EBNF-only today, more later).
-  for (const d of dialects) {
-    const opt = document.createElement("option");
-    opt.value = d.id;
-    opt.textContent = d.label;
-    dialectSel.append(opt);
-  }
 
   initTheme();
   $("theme-toggle").addEventListener("click", toggleTheme);
@@ -112,7 +114,7 @@ export function initApp(): void {
     localStorage.setItem(WIDTH_KEY, widthInput.value);
     try {
       const wrapWidthCm = Number(widthInput.value) || DEFAULT_OPTIONS.wrapWidthCm;
-      const rules = generate(grammarEl.value, dialectSel.value, {
+      const rules = generate(grammarEl.value, {
         mode: modeSel.value as FitMode,
         wrapWidthCm,
       });
@@ -136,15 +138,14 @@ export function initApp(): void {
   };
 
   grammarEl.addEventListener("input", schedule);
-  dialectSel.addEventListener("change", run);
   modeSel.addEventListener("change", () => {
     syncWidthField();
     run();
   });
   widthInput.addEventListener("input", schedule);
   $("error-dismiss").addEventListener("click", () => hideError(banner));
-  $("sample-btn").addEventListener("click", () => {
-    grammarEl.value = SAMPLE_GRAMMAR;
+
+  initLibrary(grammarEl, () => {
     updateGutter();
     run();
   });
@@ -160,6 +161,163 @@ export function initApp(): void {
   });
 
   run();
+}
+
+/**
+ * The in-browser grammar library: a "Save" modal and a "Saved ▾" popover list.
+ * `loadIntoEditor` sets the editor's value then refreshes the gutter + diagrams.
+ */
+function initLibrary(grammarEl: HTMLTextAreaElement, refresh: () => void): void {
+  let library = loadLibrary();
+  let sort: LibrarySort = loadSort();
+
+  const saveBtn = $<HTMLButtonElement>("save-btn");
+  const savedBtn = $<HTMLButtonElement>("saved-btn");
+  const popover = $<HTMLDivElement>("library-popover");
+  const listEl = $<HTMLUListElement>("library-list");
+  const sortRecent = $<HTMLButtonElement>("sort-recent");
+  const sortAlpha = $<HTMLButtonElement>("sort-alpha");
+
+  const modal = $<HTMLDialogElement>("save-modal");
+  const form = $<HTMLFormElement>("save-form");
+  const titleInput = $<HTMLInputElement>("save-title");
+  const descInput = $<HTMLTextAreaElement>("save-description");
+  const hint = $<HTMLParagraphElement>("save-hint");
+
+  const loadInto = (entry: SavedGrammar): void => {
+    grammarEl.value = entry.grammar;
+    refresh();
+  };
+
+  const renderList = (): void => {
+    sortRecent.classList.toggle("active", sort === "recent");
+    sortAlpha.classList.toggle("active", sort === "alpha");
+    listEl.replaceChildren();
+
+    if (library.length === 0) {
+      const empty = document.createElement("li");
+      empty.className = "library-empty";
+      empty.textContent = "No saved grammars yet.";
+      listEl.append(empty);
+      return;
+    }
+
+    for (const entry of sortLibrary(library, sort)) {
+      const li = document.createElement("li");
+      li.className = "library-item";
+
+      const load = document.createElement("button");
+      load.type = "button";
+      load.className = "library-load";
+      const title = document.createElement("span");
+      title.className = "library-item-title";
+      title.textContent = entry.title;
+      load.append(title);
+      if (entry.description) {
+        const desc = document.createElement("span");
+        desc.className = "library-item-desc";
+        desc.textContent = entry.description;
+        load.append(desc);
+        load.title = entry.description;
+      }
+      load.addEventListener("click", () => {
+        loadInto(entry);
+        closePopover();
+      });
+
+      const del = document.createElement("button");
+      del.type = "button";
+      del.className = "library-delete";
+      del.setAttribute("aria-label", `Delete ${entry.title}`);
+      del.title = "Delete";
+      del.textContent = "✕";
+      del.addEventListener("click", () => {
+        if (!confirm(`Delete “${entry.title}”?`)) return;
+        library = removeGrammar(library, entry.title);
+        renderList();
+        toast("Deleted");
+      });
+
+      li.append(load, del);
+      listEl.append(li);
+    }
+  };
+
+  // Popover open/close.
+  const openPopover = (): void => {
+    renderList();
+    popover.hidden = false;
+    savedBtn.setAttribute("aria-expanded", "true");
+    document.addEventListener("pointerdown", onOutside, true);
+    document.addEventListener("keydown", onEsc);
+  };
+  function closePopover(): void {
+    popover.hidden = true;
+    savedBtn.setAttribute("aria-expanded", "false");
+    document.removeEventListener("pointerdown", onOutside, true);
+    document.removeEventListener("keydown", onEsc);
+  }
+  const onOutside = (e: PointerEvent): void => {
+    const t = e.target as Node;
+    if (!popover.contains(t) && t !== savedBtn) closePopover();
+  };
+  const onEsc = (e: KeyboardEvent): void => {
+    if (e.key === "Escape") closePopover();
+  };
+  savedBtn.addEventListener("click", () => {
+    if (popover.hidden) openPopover();
+    else closePopover();
+  });
+
+  const setSort = (next: LibrarySort): void => {
+    sort = next;
+    saveSort(next);
+    renderList();
+  };
+  sortRecent.addEventListener("click", () => setSort("recent"));
+  sortAlpha.addEventListener("click", () => setSort("alpha"));
+
+  // Save modal. The form opens blank; typing a title that already exists warns
+  // in-place that saving will overwrite it (title is the entry's identity).
+  const openModal = (): void => {
+    closePopover();
+    form.reset();
+    updateHint();
+    modal.showModal();
+    titleInput.focus();
+  };
+  const updateHint = (): void => {
+    const existing = findByTitle(library, titleInput.value.trim());
+    if (existing) {
+      hint.textContent = `A grammar titled “${existing.title}” exists — saving overwrites it.`;
+      hint.hidden = false;
+    } else {
+      hint.hidden = true;
+    }
+  };
+  titleInput.addEventListener("input", updateHint);
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const title = titleInput.value.trim();
+    if (!title) return;
+    library = upsertGrammar(library, {
+      title,
+      description: descInput.value.trim(),
+      grammar: grammarEl.value,
+    });
+    modal.close();
+    toast("Saved");
+  });
+  $("save-cancel").addEventListener("click", () => modal.close());
+
+  saveBtn.addEventListener("click", openModal);
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+      openModal();
+    }
+  });
 }
 
 function renderRules(container: HTMLElement, rules: RuleDiagram[]): void {

@@ -1,9 +1,9 @@
 /**
- * Dialect-neutral grammar AST.
+ * Grammar AST produced by the EBNF parser (`parseEbnf`).
  *
- * Every dialect parser (EBNF today; BNF/ABNF later) produces this same shape,
- * so downstream stages — diagram building, layout, rendering — never learn which
- * notation the source was written in. This is the app's primary extension seam.
+ * Downstream stages — diagram building, layout, rendering — consume this shape
+ * and never touch the source notation, so it stays a clean seam between parsing
+ * and everything after it.
  */
 
 export type Expression =
@@ -85,6 +85,8 @@ export interface Rule {
   expr: Expression;
   /** 1-based line of the rule's defining name, for UI cross-referencing. */
   line: number;
+  /** The rule's original source text, verbatim (name through terminator). */
+  source: string;
 }
 
 /** A whole parsed grammar. */

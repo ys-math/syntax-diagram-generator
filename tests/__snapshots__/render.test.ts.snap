@@ -114,7 +114,7 @@ optional greeting
 
 exports[`renderers — golden snapshots > matches the TikZ golden snapshot 1`] = `
 "expression
-% expression
+% expression = term, { ("+" | "-"), term };
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -147,7 +147,7 @@ exports[`renderers — golden snapshots > matches the TikZ golden snapshot 1`] =
 }
 
 term
-% term
+% term = factor, { ("*" | "/"), factor };
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -180,7 +180,7 @@ term
 }
 
 factor
-% factor
+% factor = number | "(", expression, ")";
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -214,7 +214,7 @@ factor
 }
 
 number
-% number
+% number = digit, { digit };
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -239,7 +239,7 @@ number
 }
 
 digit
-% digit
+% digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -298,7 +298,7 @@ digit
 }
 
 padded
-% padded
+% padded = 3 * digit;
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -324,7 +324,7 @@ padded
 }
 
 letter
-% letter
+% letter = ? A-Z ?;
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -345,7 +345,7 @@ letter
 }
 
 consonant
-% consonant
+% consonant = letter - vowel;
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -366,7 +366,7 @@ consonant
 }
 
 vowel
-% vowel
+% vowel = "A" | "E" | "I" | "O" | "U";
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}
@@ -405,7 +405,7 @@ vowel
 }
 
 optional greeting
-% optional greeting
+% optional greeting = ["hello"], "world";
 \\definecolor{sdgLine}{RGB}{57,70,86}
 \\definecolor{sdgTermFill}{RGB}{238,243,251}
 \\definecolor{sdgTermLine}{RGB}{58,103,168}

@@ -17,10 +17,6 @@
       </div>
       <div class="controls">
         <label class="field">
-          <span>Dialect</span>
-          <select id="dialect"></select>
-        </label>
-        <label class="field">
           <span>Fit</span>
           <select id="fit-mode" title="How wide diagrams fit the LaTeX page">
             <option value="shrink">Shrink</option>
@@ -39,7 +35,30 @@
       <section class="pane editor-pane">
         <div class="pane-head">
           <h2>Grammar</h2>
-          <button id="sample-btn" class="ghost small" type="button">Load sample</button>
+          <div class="library-controls">
+            <button id="save-btn" class="ghost small" type="button">Save</button>
+            <div class="library-menu">
+              <button
+                id="saved-btn"
+                class="ghost small"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Saved ▾
+              </button>
+              <div id="library-popover" class="library-popover" hidden>
+                <div class="library-popover-head">
+                  <span>Saved grammars</span>
+                  <div class="library-sort" role="group" aria-label="Sort saved grammars">
+                    <button id="sort-recent" class="sort-tab" type="button">Recent</button>
+                    <button id="sort-alpha" class="sort-tab" type="button">A–Z</button>
+                  </div>
+                </div>
+                <ul id="library-list" class="library-list"></ul>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="editor">
           <div id="gutter" class="gutter" aria-hidden="true"></div>
@@ -78,6 +97,25 @@
         <div id="diagrams" class="diagrams"></div>
       </section>
     </main>
+
+    <dialog id="save-modal" class="modal">
+      <form id="save-form" method="dialog" class="modal-body">
+        <h2 class="modal-title">Save grammar</h2>
+        <label class="modal-field">
+          <span>Title</span>
+          <input id="save-title" type="text" required maxlength="120" autocomplete="off" />
+        </label>
+        <label class="modal-field">
+          <span>Description <em>(optional)</em></span>
+          <textarea id="save-description" rows="3" maxlength="500"></textarea>
+        </label>
+        <p id="save-hint" class="modal-hint" hidden></p>
+        <div class="modal-actions">
+          <button type="button" id="save-cancel" class="ghost">Cancel</button>
+          <button type="submit" id="save-confirm" class="ghost primary">Save</button>
+        </div>
+      </form>
+    </dialog>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

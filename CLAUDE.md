@@ -13,15 +13,18 @@ One pipeline, one measured diagram tree, multiple output backends:
 input → parser → grammar rules → builder → diagram node → draw pass → backend (SVG | TikZ)
 ```
 
-- `src/parser/` — tokenizer + recursive-descent parser → `ast.ts`; dialects via
-  `getDialect(id)`. Errors are structured (`errors.ts`) with line/col + expected/found.
+- `src/parser/` — tokenizer + recursive-descent parser → `ast.ts` (EBNF only,
+  via `parseEbnf`). Errors are structured (`errors.ts`) with line/col + expected/found.
 - `src/model/builder.ts` — turns a parsed rule into a diagram `node` (`nodes.ts`).
 - `src/layout/layout.ts` — measures/positions the tree.
 - `src/render/draw.ts` — single geometry pass; emits only the primitives in
   `backend.ts` (`rail`, `box`, `label`, `arrow`). New output format = new backend, no layout logic duplicated.
 - `src/render/svg.ts`, `tikz.ts` — the two backends; `combine.ts` merges per-rule output.
-- `src/pipeline.ts` — `generate(input, dialectId, options)`: entry point tying it together.
+- `src/pipeline.ts` — `generate(input, options)`: entry point tying it together.
 - `src/ui/app.ts` — live debounced UI wiring; `src/main.ts` boots it.
+- `src/ui/library.ts` — the in-browser saved-grammar library (title + optional
+  description), persisted to `localStorage` (`sdg:library`); the sample is a
+  seeded, deletable entry.
 
 **Fit modes** (`RenderOptions.mode` in `pipeline.ts`): `shrink` (default, wraps
 diagram in `\adjustbox` to fit the LaTeX page) or `wrap` (snakes wide sequences
